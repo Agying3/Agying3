@@ -1,10 +1,6 @@
-<!-- 顶部暗色渐变 banner（主题感知：暗色模式自动切暗色图） -->
+<!-- 顶部暗色 banner（本地 SVG，永远加载，不依赖图床） -->
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0d1117,161b22,bd93f9,ff79c6&height=160&section=header&text=Tujue%20%2F%20%E5%9B%BE%E5%86%B3&fontSize=42&fontColor=ffffff&fontAlign=50&fontAlignY=38&animation=fadeIn">
-    <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=ffffff,fff0fa,bd93f9&height=160&section=header&text=Tujue%20%2F%20%E5%9B%BE%E5%86%B3&fontSize=42&fontColor=1a1b26&fontAlign=50&fontAlignY=38">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=0d1117,161b22,bd93f9,ff79c6&height=160&section=header&text=Tujue%20%2F%20%E5%9B%BE%E5%86%B3&fontSize=42&fontColor=ffffff&fontAlign=50&fontAlignY=38&animation=fadeIn">
-  </picture>
+  <img src="assets/banner.svg" alt="Agying3 banner" width="1000"/>
 </p>
 
 <div align="center">
@@ -13,22 +9,25 @@
 
 </div>
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=FF79C6&center=true&vCenter=true&width=620&lines=%E4%BA%8C%E6%AC%A1%E5%85%83%E5%BC%80%E5%8F%91%E8%80%85+%C2%B7+%E7%94%A8%E4%BB%A3%E7%A0%81%E9%80%A0%E7%82%B9%E5%8F%AF%E7%88%B1%E7%9A%84%E5%B0%8F%E4%B8%9C%E8%A5%BF;Rust+%2B+Slint+%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8;Python+%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7;AI+%E4%BA%BA%E8%AE%BE+%2F+%E6%A0%87%E7%AD%BE%E7%B3%BB%E7%BB%9F+%E4%BA%A7%E5%93%81%E5%8C%96" alt="typing" />
-</div>
-
 ---
 
-### 🌸 关于我
+### 🪪 关于我
 
-<div align="center">
+<p align="center">
+  <img src="assets/table.svg" alt="关于我" width="1000"/>
+</p>
 
-🛠️ 正在搞 **DMShoot**（多平台私信聚合）和 **auto-send**（视频自动上传）  
-🎨 顺手把 **shitview** 做成代码结构可视化工具（Rust + Slint）  
-🤖 内置双 AI 人设：柁炑（傲娇）/ 圡泬（女仆）  
-🎮 偶尔玩 Terraria，硬件老了卡但快乐
+### 📈 心情 K 线（装饰）
 
-</div>
+<p align="center">
+  <img src="assets/kline.svg" alt="K 线" width="1000"/>
+</p>
+
+### 🗓️ 项目时间线 · Roadmap
+
+<p align="center">
+  <img src="assets/gantt.svg" alt="甘特图" width="1000"/>
+</p>
 
 ### 🧰 技术栈
 
@@ -61,9 +60,5 @@
 <h3 align="center">🐾 谢谢你来看我的小天地 🐾</h3>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0d1117,bd93f9,ff79c6&height=120&section=footer">
-    <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=ffffff,bd93f9,ffd6f5&height=120&section=footer">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=0d1117,bd93f9,ff79c6&height=120&section=footer">
-  </picture>
+  <img src="assets/footer.svg" alt="footer" width="1000"/>
 </p>
