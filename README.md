@@ -33,60 +33,48 @@
 </div>
 
 <p align="center">
-  <sub>👇 点击卡片展开看动画 · 点击图片跳转对应页面</sub>
+  <sub>👇 点击图片可跳转对应页面</sub>
 </p>
 
 <table>
   <tr>
     <td align="center" width="50%">
-      <details>
-        <summary>🌙 深夜编码 · 点击展开</summary>
-        <a href="https://github.com/Agying3">
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="assets/scene_night_dark.svg">
-            <source media="(prefers-color-scheme: light)" srcset="assets/scene_night_light.svg">
-            <img src="assets/scene_night_dark.svg" alt="night coding" width="100%"/>
-          </picture>
-        </a>
-      </details>
+      <a href="https://github.com/Agying3">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="assets/scene_night_dark.svg">
+          <source media="(prefers-color-scheme: light)" srcset="assets/scene_night_light.svg">
+          <img src="assets/scene_night_dark.svg" alt="night coding" width="100%"/>
+        </picture>
+      </a>
     </td>
     <td align="center" width="50%">
-      <details>
-        <summary>🎧 正在听 · 点击展开</summary>
-        <a href="https://github.com/Agying3">
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="assets/scene_music_dark.svg">
-            <source media="(prefers-color-scheme: light)" srcset="assets/scene_music_light.svg">
-            <img src="assets/scene_music_dark.svg" alt="now playing" width="100%"/>
-          </picture>
-        </a>
-      </details>
+      <a href="https://github.com/Agying3">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="assets/scene_music_dark.svg">
+          <source media="(prefers-color-scheme: light)" srcset="assets/scene_music_light.svg">
+          <img src="assets/scene_music_dark.svg" alt="now playing" width="100%"/>
+        </picture>
+      </a>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <details>
-        <summary>📈 K线 · 点击展开</summary>
-        <a href="https://github.com/Agying3">
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="assets/kline_dark.svg">
-            <source media="(prefers-color-scheme: light)" srcset="assets/kline_light.svg">
-            <img src="assets/kline_dark.svg" alt="kline" width="100%"/>
-          </picture>
-        </a>
-      </details>
+      <a href="https://github.com/Agying3">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="assets/kline_dark.svg">
+          <source media="(prefers-color-scheme: light)" srcset="assets/kline_light.svg">
+          <img src="assets/kline_dark.svg" alt="kline" width="100%"/>
+        </picture>
+      </a>
     </td>
     <td align="center" width="50%">
-      <details>
-        <summary>🎡 轮盘 · 点击展开（跳仓库）</summary>
-        <a href="https://github.com/Agying3?tab=repositories">
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="assets/wheel_dark.svg">
-            <source media="(prefers-color-scheme: light)" srcset="assets/wheel_light.svg">
-            <img src="assets/wheel_dark.svg" alt="vibe wheel" width="100%"/>
-          </picture>
-        </a>
-      </details>
+      <a href="https://github.com/Agying3?tab=repositories">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="assets/wheel_dark.svg">
+          <source media="(prefers-color-scheme: light)" srcset="assets/wheel_light.svg">
+          <img src="assets/wheel_dark.svg" alt="vibe wheel" width="100%"/>
+        </picture>
+      </a>
     </td>
   </tr>
 </table>
