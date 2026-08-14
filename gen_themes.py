@@ -3,29 +3,29 @@ import os, random, math
 OUT = r"H:\Agying3\assets"
 os.makedirs(OUT, exist_ok=True)
 
-# ---- 调色板 ----
+# ---- 调色板：樱粉暖阳（珊瑚橙 → 樱粉 → 暖金）----
 DARK = dict(
     bg0="#0d1117", bg1="#161b22", bg2="#21262d",
     surface="#161b22", surface2="#0d1117", border="#30363d",
     text="#e6edf3", sub="#8b949e",
-    blue="#58a6ff", purple="#bc8cff", pink="#f778ba",
+    blue="#ff7e5f", purple="#ff6b9d", pink="#ffd479",
     red="#ff7b72", green="#3fb950", yellow="#e3b341",
     sky0="#0b0e1a", sky1="#161b22", star="#e6edf3",
     winbg="#0a0d16", winfill="#1b2230", cityglow="#ffd479",
     ground="#11151c", groundline="#222a35",
-    mon0="#58a6ff", mon1="#bc8cff",
+    mon0="#ff7e5f", mon1="#ff6b9d",
     foottext="#0d1117",
 )
 LIGHT = dict(
     bg0="#f6f8fa", bg1="#eaeef2", bg2="#d0d7de",
     surface="#ffffff", surface2="#f6f8fa", border="#d0d7de",
     text="#1f2328", sub="#656d76",
-    blue="#0969da", purple="#8250df", pink="#bf3989",
+    blue="#e8590c", purple="#c2255c", pink="#b8860b",
     red="#cf222e", green="#1a7f37", yellow="#9a6700",
     sky0="#acc6e6", sky1="#dce9f5", star="#ffffff",
     winbg="#cdd6e0", winfill="#aeb9c7", cityglow="#bf8700",
     ground="#e1e6eb", groundline="#c9d1d9",
-    mon0="#0969da", mon1="#8250df",
+    mon0="#e8590c", mon1="#c2255c",
     foottext="#ffffff",
 )
 
@@ -134,7 +134,7 @@ def scene_night(P):
       f'<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="{P["sky0"]}"/><stop offset="100%" stop-color="{P["sky1"]}"/></linearGradient>'
       f'<linearGradient id="mon" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="{P["mon0"]}"/><stop offset="100%" stop-color="{P["mon1"]}"/></linearGradient>'
       '<radialGradient id="moon" cx="40%" cy="40%" r="60%"><stop offset="0%" stop-color="#f5e6b8"/><stop offset="100%" stop-color="#d9c48a"/></radialGradient>'
-      '<linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#39d98a"/><stop offset="50%" stop-color="#7b5cff"/><stop offset="100%" stop-color="#39d98a"/></linearGradient>'
+      '<linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#39d98a"/><stop offset="50%" stop-color="#ff6b9d"/><stop offset="100%" stop-color="#39d98a"/></linearGradient>'
       '</defs>')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#sky)"/>')
     # 极光带
@@ -256,9 +256,9 @@ def footer(P):
     FW, FH = 1000, 100
     svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{FW}" height="{FH}" viewBox="0 0 {FW} {FH}" role="img" aria-label="footer">']
     svg.append('<defs><linearGradient id="fbg" x1="0" y1="0" x2="1" y2="0">'
-      f'<stop offset="0%" stop-color="{P["blue"]}"><animate attributeName="stop-color" values="{P["blue"]};{P["green"]};{P["yellow"]};{P["pink"]};{P["purple"]};{P["blue"]}" dur="6s" repeatCount="indefinite"/></stop>'
-      f'<stop offset="50%" stop-color="{P["purple"]}"><animate attributeName="stop-color" values="{P["purple"]};{P["blue"]};{P["green"]};{P["yellow"]};{P["pink"]};{P["purple"]}" dur="6s" repeatCount="indefinite"/></stop>'
-      f'<stop offset="100%" stop-color="{P["pink"]}"><animate attributeName="stop-color" values="{P["pink"]};{P["purple"]};{P["blue"]};{P["green"]};{P["yellow"]};{P["pink"]}" dur="6s" repeatCount="indefinite"/></stop>'
+      f'<stop offset="0%" stop-color="{P["blue"]}"><animate attributeName="stop-color" values="{P["blue"]};{P["pink"]};{P["purple"]};{P["blue"]}" dur="6s" repeatCount="indefinite"/></stop>'
+      f'<stop offset="50%" stop-color="{P["pink"]}"><animate attributeName="stop-color" values="{P["pink"]};{P["blue"]};{P["purple"]};{P["pink"]}" dur="6s" repeatCount="indefinite"/></stop>'
+      f'<stop offset="100%" stop-color="{P["purple"]}"><animate attributeName="stop-color" values="{P["purple"]};{P["blue"]};{P["pink"]};{P["purple"]}" dur="6s" repeatCount="indefinite"/></stop>'
       '</linearGradient></defs>')
     svg.append(f'<rect x="0" y="0" width="{FW}" height="{FH}" fill="{P["bg0"]}"/>')
     path = "M0,55 "
@@ -330,23 +330,6 @@ def wave(P):
     svg.append('</svg>')
     return ''.join(svg)
 
-# ---------- 技术跑马灯 ----------
-def marquee(P):
-    W,H=1000,80
-    item = "Python · C++ · Git · Linux · React · Node.js · TypeScript · Docker · VSCode · Vim · Rust · Go "
-    item_w = 760
-    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="tech marquee">']
-    svg.append('<defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="0">'
-      f'<stop offset="0%" stop-color="{P["blue"]}"/><stop offset="50%" stop-color="{P["purple"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient></defs>')
-    svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="16" fill="{P["bg0"]}"/>')
-    svg.append('<g>'
-      f'<text textLength="{item_w}" lengthAdjust="spacingAndGlyphs" x="0" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="url(#mg)">{item}</text>'
-      f'<text textLength="{item_w}" lengthAdjust="spacingAndGlyphs" x="{item_w}" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="url(#mg)">{item}</text>'
-      f'<animateTransform attributeName="transform" type="translate" from="0 0" to="-{item_w} 0" dur="16s" repeatCount="indefinite"/>'
-      '</g>')
-    svg.append('</svg>')
-    return ''.join(svg)
-
 # ---------- 生成 ----------
 for P, sfx in [(DARK, "dark"), (LIGHT, "light")]:
     write(f"banner_{sfx}.svg", banner(P))
@@ -356,6 +339,5 @@ for P, sfx in [(DARK, "dark"), (LIGHT, "light")]:
     write(f"wheel_{sfx}.svg", wheel(P))
     write(f"footer_{sfx}.svg", footer(P))
     write(f"wave_{sfx}.svg", wave(P))
-    write(f"marquee_{sfx}.svg", marquee(P))
 
 print("generated:", sorted(os.listdir(OUT)))
