@@ -33,6 +33,16 @@
 </div>
 
 <p align="center">
+  <a href="https://github.com/Agying3">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/wave_dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/wave_light.svg">
+      <img src="assets/wave_dark.svg" alt="wave" width="1000"/>
+    </picture>
+  </a>
+</p>
+
+<p align="center">
   <sub>👇 点击图片可跳转对应页面</sub>
 </p>
 
@@ -79,6 +89,16 @@
   </tr>
 </table>
 
+<p align="center">
+  <a href="https://github.com/Agying3">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/marquee_dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/marquee_light.svg">
+      <img src="assets/marquee_dark.svg" alt="tech stack" width="1000"/>
+    </picture>
+  </a>
+</p>
+
 <table>
   <tr>
     <td align="center" width="50%">
@@ -108,6 +128,16 @@
       <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=Agying3&theme=tokyonight&bg_color=0d1117&hide_border=true&color=bd93f9&line=ff79c6&point=8be9fd&area=true&area_color=161b22">
       <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=Agying3&theme=default&bg_color=ffffff&hide_border=true&color=8250df&line=bf3989&point=0969da&area=true&area_color=eaeef2">
       <img src="https://github-readme-activity-graph.vercel.app/graph?username=Agying3&theme=tokyonight&bg_color=0d1117&hide_border=true&color=bd93f9&line=ff79c6&point=8be9fd&area=true&area_color=161b22" alt="activity" width="1000"/>
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Agying3">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/wave_dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/wave_light.svg">
+      <img src="assets/wave_dark.svg" alt="wave" width="1000"/>
     </picture>
   </a>
 </p>

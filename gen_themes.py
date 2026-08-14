@@ -33,6 +33,19 @@ def write(name, svg):
     with open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
         f.write(svg)
 
+# 随机闪烁星屑（多处复用）
+def sparkles(P, n, W, H, seed=1, rmax=2.2, opacity=0.8, ymax=None):
+    random.seed(seed)
+    ymax = ymax or H
+    out=[]
+    for _ in range(n):
+        x=random.uniform(0,W); y=random.uniform(0,ymax); r=random.uniform(0.5,rmax)
+        op=random.uniform(0.2,opacity); dur=round(random.uniform(1.5,3.5),2)
+        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" fill="{P["star"]}" opacity="{op:.2f}">'
+                   f'<animate attributeName="opacity" values="{op:.2f};0.1;{op:.2f}" dur="{dur}s" repeatCount="indefinite"/>'
+                   f'</circle>')
+    return ''.join(out)
+
 # ---------- banner ----------
 def banner(P):
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="240" viewBox="0 0 1000 240" role="img" aria-label="Agying3 banner">
@@ -51,9 +64,12 @@ def banner(P):
       <stop offset="0%" stop-color="{P['purple']}" stop-opacity="0.30"/>
       <stop offset="100%" stop-color="{P['purple']}" stop-opacity="0"/>
     </radialGradient>
+    <filter id="neon" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
   </defs>
   <rect x="0" y="0" width="1000" height="240" rx="24" fill="url(#bg)"/>
   <rect x="0" y="0" width="1000" height="240" rx="24" fill="url(#glow)"/>
+  {sparkles(P, 16, 1000, 240, seed=21, rmax=1.8)}
+  <text x="40" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="url(#accent)" filter="url(#neon)">Agying3<animate attributeName="opacity" values="0.35;0.9;0.35" dur="2.4s" repeatCount="indefinite"/></text>
   <text x="40" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="url(#accent)">Agying3</text>
   <text x="42" y="162" font-family="Consolas, monospace" font-size="16" fill="{P['sub']}">~/Agying3 $ _</text>
   <rect x="170" y="148" width="11" height="18" rx="2" fill="url(#accent)">
@@ -91,14 +107,22 @@ def kline(P):
         ma = sum(closes[max(0,i-3):i+1])/min(i+1,4)
         pts.append(f'{x(i):.1f},{y(ma):.1f}')
     svg.append(' '.join(pts)+'"/>')
+    # 扫描线（上下扫动）
+    svg.append(f'<rect x="{padL}" y="{padT}" width="{plotW}" height="2" fill="{P["blue"]}" opacity="0.5">'
+               f'<animate attributeName="y" values="{padT};{padT+plotH};{padT}" dur="4.5s" repeatCount="indefinite"/>'
+               f'<animate attributeName="opacity" values="0.1;0.7;0.1" dur="4.5s" repeatCount="indefinite"/>'
+               f'</rect>')
     cw = plotW/n*0.6
     for i in range(n):
         o,c,h,l = opens[i],closes[i],highs[i],lows[i]
         col = P["red"] if c>=o else P["green"]
         cx = x(i)
-        svg.append(f'<line x1="{cx:.1f}" y1="{y(h):.1f}" x2="{cx:.1f}" y2="{y(l):.1f}" stroke="{col}" stroke-width="1.5"/>')
         yo=y(o); yc=y(c); top=min(yo,yc); hgt=max(abs(yc-yo),1.5)
-        svg.append(f'<rect x="{cx-cw/2:.1f}" y="{top:.1f}" width="{cw:.1f}" height="{hgt:.1f}" fill="{col}" rx="1"/>')
+        svg.append(f'<g opacity="0">'
+                   f'<line x1="{cx:.1f}" y1="{y(h):.1f}" x2="{cx:.1f}" y2="{y(l):.1f}" stroke="{col}" stroke-width="1.5"/>'
+                   f'<rect x="{cx-cw/2:.1f}" y="{top:.1f}" width="{cw:.1f}" height="{hgt:.1f}" fill="{col}" rx="1"/>'
+                   f'<animate attributeName="opacity" from="0" to="1" begin="{i*0.07:.2f}s" dur="0.5s" fill="freeze"/>'
+                   f'</g>')
     svg.append('</svg>')
     return ''.join(svg)
 
@@ -110,8 +134,15 @@ def scene_night(P):
       f'<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="{P["sky0"]}"/><stop offset="100%" stop-color="{P["sky1"]}"/></linearGradient>'
       f'<linearGradient id="mon" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="{P["mon0"]}"/><stop offset="100%" stop-color="{P["mon1"]}"/></linearGradient>'
       '<radialGradient id="moon" cx="40%" cy="40%" r="60%"><stop offset="0%" stop-color="#f5e6b8"/><stop offset="100%" stop-color="#d9c48a"/></radialGradient>'
+      '<linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#39d98a"/><stop offset="50%" stop-color="#7b5cff"/><stop offset="100%" stop-color="#39d98a"/></linearGradient>'
       '</defs>')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#sky)"/>')
+    # 极光带
+    svg.append('<g opacity="0.22">'
+      '<path d="M-60,30 Q250,0 500,30 T1060,30 L1060,150 Q500,90 -60,150 Z" fill="url(#aurora)"/>'
+      '<animate attributeName="opacity" values="0.12;0.32;0.12" dur="5s" repeatCount="indefinite"/>'
+      '</g>')
+    # 星空 + 闪烁
     random.seed(7)
     for _ in range(55):
         sx=random.uniform(0,W); sy=random.uniform(0,300); sr=random.uniform(0.6,1.8)
@@ -123,6 +154,15 @@ def scene_night(P):
                        f'</circle>')
         else:
             svg.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="{sr:.1f}" fill="{P["star"]}" opacity="{op:.1f}"/>')
+    # 流星
+    for k in range(2):
+        sx = 220 + k*520; sy = 25 + k*40
+        svg.append(f'<g>'
+          f'<line x1="0" y1="0" x2="46" y2="15" stroke="{P["star"]}" stroke-width="2.4" stroke-linecap="round" opacity="0">'
+          f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.8;1" dur="{6+k*2.5}s" begin="{k*3.5}s" repeatCount="indefinite"/>'
+          f'</line>'
+          f'<animateTransform attributeName="transform" type="translate" from="{sx} {sy}" to="{sx+300} {sy+95}" dur="{6+k*2.5}s" begin="{k*3.5}s" repeatCount="indefinite"/>'
+          f'</g>')
     svg.append('<circle cx="150" cy="90" r="36" fill="url(#moon)"/>')
     svg.append('<circle cx="138" cy="80" r="7" fill="#c9b878" opacity="0.6"/>')
     svg.append('<circle cx="165" cy="100" r="5" fill="#c9b878" opacity="0.5"/>')
@@ -166,21 +206,38 @@ def scene_music(P):
     svg.append('<defs>'
       f'<linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="{P["bg0"]}"/><stop offset="100%" stop-color="{P["bg1"]}"/></linearGradient>'
       f'<linearGradient id="al" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="{P["purple"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient>'
+      '<linearGradient id="eqc" x1="0" y1="0" x2="1" y2="0">'
+        f'<stop offset="0%" stop-color="{P["purple"]}"><animate attributeName="stop-color" values="{P["purple"]};{P["pink"]};{P["blue"]};{P["purple"]}" dur="4s" repeatCount="indefinite"/></stop>'
+        f'<stop offset="100%" stop-color="{P["pink"]}"><animate attributeName="stop-color" values="{P["pink"]};{P["blue"]};{P["purple"]};{P["pink"]}" dur="4s" repeatCount="indefinite"/></stop>'
+      '</linearGradient>'
       '</defs>')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#bg2)"/>')
     cardx,cardy,cardw,cardh=120,60,760,240
     svg.append(f'<rect x="{cardx}" y="{cardy}" width="{cardw}" height="{cardh}" rx="20" fill="{P["surface2"]}" stroke="{P["border"]}" stroke-width="1.5"/>')
     ax,ay,as_=170,100,150
     svg.append(f'<rect x="{ax}" y="{ay}" width="{as_}" height="{as_}" rx="16" fill="url(#al)"/>')
+    # 唱片旋转
+    svg.append(f'<g>'
+      f'<circle cx="{ax+as_/2:.0f}" cy="{ay+as_/2:.0f}" r="{as_/2-18:.0f}" fill="none" stroke="{P["surface2"]}" stroke-width="2" opacity="0.6"/>'
+      f'<circle cx="{ax+as_/2:.0f}" cy="{ay+as_/2:.0f}" r="10" fill="{P["surface2"]}"/>'
+      f'<animateTransform attributeName="transform" type="rotate" from="0 {ax+as_/2:.0f} {ay+as_/2:.0f}" to="360 {ax+as_/2:.0f} {ay+as_/2:.0f}" dur="6s" repeatCount="indefinite"/>'
+      f'</g>')
     random.seed(11)
     for b in range(7):
         bx=ax+18+b*18; bh=random.uniform(30,120)
         y0=ay+as_-10-bh
         dur=round(random.uniform(0.7,1.4),2)
-        svg.append(f'<rect x="{bx}" y="{y0:.1f}" width="10" height="{bh:.1f}" rx="4" fill="{P["surface2"]}" opacity="0.5">'
+        svg.append(f'<rect x="{bx}" y="{y0:.1f}" width="10" height="{bh:.1f}" rx="4" fill="url(#eqc)">'
                    f'<animate attributeName="height" values="{bh:.1f};{bh*0.35:.1f};{bh:.1f}" dur="{dur}s" repeatCount="indefinite"/>'
                    f'<animate attributeName="y" values="{y0:.1f};{ay+as_-10-bh*0.35:.1f};{y0:.1f}" dur="{dur}s" repeatCount="indefinite"/>'
                    f'</rect>')
+    # 飘动的音符
+    for k in range(3):
+        nx = ax+as_+150 + k*120
+        svg.append(f'<text x="{nx}" y="{ay+as_-20}" font-size="22" fill="{P["purple"]}" opacity="0">♪'
+          f'<animate attributeName="opacity" values="0;0.9;0" dur="3s" begin="{k*1}s" repeatCount="indefinite"/>'
+          f'<animateTransform attributeName="transform" type="translate" values="0 0; 0 -130" dur="3s" begin="{k*1}s" repeatCount="indefinite"/>'
+          f'</text>')
     tx=ax+as_+50
     svg.append(f'<text x="{tx}" y="{ay+45}" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{P["sub"]}">♪ now playing</text>')
     svg.append(f'<text x="{tx}" y="{ay+82}" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="{P["text"]}">lo-fi &amp; late night</text>')
@@ -198,7 +255,11 @@ def scene_music(P):
 def footer(P):
     FW, FH = 1000, 100
     svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{FW}" height="{FH}" viewBox="0 0 {FW} {FH}" role="img" aria-label="footer">']
-    svg.append(f'<defs><linearGradient id="fbg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="{P["blue"]}"/><stop offset="50%" stop-color="{P["purple"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient></defs>')
+    svg.append('<defs><linearGradient id="fbg" x1="0" y1="0" x2="1" y2="0">'
+      f'<stop offset="0%" stop-color="{P["blue"]}"><animate attributeName="stop-color" values="{P["blue"]};{P["green"]};{P["yellow"]};{P["pink"]};{P["purple"]};{P["blue"]}" dur="6s" repeatCount="indefinite"/></stop>'
+      f'<stop offset="50%" stop-color="{P["purple"]}"><animate attributeName="stop-color" values="{P["purple"]};{P["blue"]};{P["green"]};{P["yellow"]};{P["pink"]};{P["purple"]}" dur="6s" repeatCount="indefinite"/></stop>'
+      f'<stop offset="100%" stop-color="{P["pink"]}"><animate attributeName="stop-color" values="{P["pink"]};{P["purple"]};{P["blue"]};{P["green"]};{P["yellow"]};{P["pink"]}" dur="6s" repeatCount="indefinite"/></stop>'
+      '</linearGradient></defs>')
     svg.append(f'<rect x="0" y="0" width="{FW}" height="{FH}" fill="{P["bg0"]}"/>')
     path = "M0,55 "
     for x in range(0, FW+20, 20):
@@ -217,22 +278,72 @@ def wheel(P):
     svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="vibe wheel">']
     svg.append('<defs>'
       f'<linearGradient id="wbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="{P["bg0"]}"/><stop offset="100%" stop-color="{P["bg1"]}"/></linearGradient>'
-      f'<linearGradient id="wac" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="{P["blue"]}"/><stop offset="50%" stop-color="{P["purple"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient>'
+      '<linearGradient id="wac" x1="0" y1="0" x2="1" y2="0">'
+        f'<stop offset="0%" stop-color="{P["blue"]}"><animate attributeName="stop-color" values="{P["blue"]};{P["pink"]};{P["purple"]};{P["blue"]}" dur="5s" repeatCount="indefinite"/></stop>'
+        f'<stop offset="50%" stop-color="{P["purple"]}"><animate attributeName="stop-color" values="{P["purple"]};{P["blue"]};{P["pink"]};{P["purple"]}" dur="5s" repeatCount="indefinite"/></stop>'
+        f'<stop offset="100%" stop-color="{P["pink"]}"><animate attributeName="stop-color" values="{P["pink"]};{P["purple"]};{P["blue"]};{P["pink"]}" dur="5s" repeatCount="indefinite"/></stop>'
+      '</linearGradient>'
       f'<radialGradient id="wglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="{P["purple"]}" stop-opacity="0.35"/><stop offset="100%" stop-color="{P["purple"]}" stop-opacity="0"/></radialGradient>'
       f'<path id="wpts" d="M{cx-r}, {cy} a {r},{r} 0 1,1 {2*r},0 a {r},{r} 0 1,1 -{2*r},0"/>'
       '</defs>')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#wbg)"/>')
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r+22}" fill="url(#wglow)">'
                f'<animate attributeName="opacity" values="0.4;0.75;0.4" dur="3.2s" repeatCount="indefinite"/></circle>')
+    # 旋转主环
     svg.append('<g>')
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r+14}" fill="none" stroke="{P["border"]}" stroke-width="2" stroke-dasharray="2 12"/>')
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="url(#wac)" stroke-width="14" stroke-dasharray="640 260" transform="rotate(-90 {cx} {cy})" opacity="0.9"/>')
     svg.append(f'<text font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{P["sub"]}" letter-spacing="3"><textPath href="#wpts" startOffset="2%">AGYING3 · CODE · VIBE · COFFEE · MUSIC · NIGHT · DREAM · </textPath></text>')
     svg.append(f'<animateTransform attributeName="transform" type="rotate" from="0 {cx} {cy}" to="360 {cx} {cy}" dur="26s" repeatCount="indefinite"/>')
     svg.append('</g>')
+    # 轨道星屑（反向旋转）
+    svg.append('<g>')
+    for s in range(6):
+        ang = s*60; rad = r+52
+        sx = cx + rad*math.cos(math.radians(ang)); sy = cy + rad*math.sin(math.radians(ang))
+        svg.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="3" fill="{P["yellow"]}"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" begin="{s*0.2:.1f}s" repeatCount="indefinite"/></circle>')
+    svg.append(f'<animateTransform attributeName="transform" type="rotate" from="360 {cx} {cy}" to="0 {cx} {cy}" dur="18s" repeatCount="indefinite"/>')
+    svg.append('</g>')
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r-46}" fill="none" stroke="{P["border"]}" stroke-width="1" opacity="0.5"/>')
     svg.append(f'<text x="{cx}" y="{cy-4}" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" fill="{P["text"]}" text-anchor="middle">VIBE</text>')
     svg.append(f'<text x="{cx}" y="{cy+28}" font-family="Consolas, monospace" font-size="14" fill="{P["sub"]}" text-anchor="middle">~/Agying3 $ _</text>')
+    svg.append('</svg>')
+    return ''.join(svg)
+
+# ---------- 波浪分隔 ----------
+def wave(P):
+    W,H=1000,120
+    def wpath(phase):
+        d=[f"M0,{H*0.5:.0f}"]
+        for x in range(0, W+20, 20):
+            y = H*0.5 + 22*math.sin(x/90.0 + phase)
+            d.append(f"L{x},{y:.1f}")
+        d.append(f"L{W},{H} L0,{H} Z")
+        return ' '.join(d)
+    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="wave">']
+    svg.append('<defs><linearGradient id="wv" x1="0" y1="0" x2="1" y2="0">'
+      f'<stop offset="0%" stop-color="{P["blue"]}"/><stop offset="50%" stop-color="{P["purple"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient></defs>')
+    svg.append(f'<path fill="url(#wv)" opacity="0.9">'
+               f'<animate attributeName="d" values="{wpath(0)};{wpath(math.pi)};{wpath(0)}" dur="7s" repeatCount="indefinite"/></path>')
+    svg.append(f'<path fill="{P["purple"]}" opacity="0.35">'
+               f'<animate attributeName="d" values="{wpath(math.pi/2)};{wpath(math.pi*1.5)};{wpath(math.pi/2)}" dur="9s" repeatCount="indefinite"/></path>')
+    svg.append('</svg>')
+    return ''.join(svg)
+
+# ---------- 技术跑马灯 ----------
+def marquee(P):
+    W,H=1000,80
+    item = "Python · C++ · Git · Linux · React · Node.js · TypeScript · Docker · VSCode · Vim · Rust · Go "
+    item_w = 760
+    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="tech marquee">']
+    svg.append('<defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="0">'
+      f'<stop offset="0%" stop-color="{P["blue"]}"/><stop offset="50%" stop-color="{P["purple"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient></defs>')
+    svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="16" fill="{P["bg0"]}"/>')
+    svg.append('<g>'
+      f'<text textLength="{item_w}" lengthAdjust="spacingAndGlyphs" x="0" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="url(#mg)">{item}</text>'
+      f'<text textLength="{item_w}" lengthAdjust="spacingAndGlyphs" x="{item_w}" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="url(#mg)">{item}</text>'
+      f'<animateTransform attributeName="transform" type="translate" from="0 0" to="-{item_w} 0" dur="16s" repeatCount="indefinite"/>'
+      '</g>')
     svg.append('</svg>')
     return ''.join(svg)
 
@@ -244,5 +355,7 @@ for P, sfx in [(DARK, "dark"), (LIGHT, "light")]:
     write(f"scene_music_{sfx}.svg", scene_music(P))
     write(f"wheel_{sfx}.svg", wheel(P))
     write(f"footer_{sfx}.svg", footer(P))
+    write(f"wave_{sfx}.svg", wave(P))
+    write(f"marquee_{sfx}.svg", marquee(P))
 
 print("generated:", sorted(os.listdir(OUT)))
