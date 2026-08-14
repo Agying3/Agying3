@@ -56,6 +56,9 @@ def banner(P):
   <rect x="0" y="0" width="1000" height="240" rx="24" fill="url(#glow)"/>
   <text x="40" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="url(#accent)">Agying3</text>
   <text x="42" y="162" font-family="Consolas, monospace" font-size="16" fill="{P['sub']}">~/Agying3 $ _</text>
+  <rect x="170" y="148" width="11" height="18" rx="2" fill="url(#accent)">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.55;1" dur="1.1s" repeatCount="indefinite"/>
+  </rect>
 </svg>'''
 
 # ---------- kline ----------
@@ -112,7 +115,14 @@ def scene_night(P):
     random.seed(7)
     for _ in range(55):
         sx=random.uniform(0,W); sy=random.uniform(0,300); sr=random.uniform(0.6,1.8)
-        svg.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="{sr:.1f}" fill="{P["star"]}" opacity="{random.uniform(0.3,0.9):.1f}"/>')
+        op=random.uniform(0.3,0.9)
+        if _ % 3 == 0:
+            dur=round(random.uniform(1.8,3.6),2)
+            svg.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="{sr:.1f}" fill="{P["star"]}" opacity="{op:.1f}">'
+                       f'<animate attributeName="opacity" values="{op:.1f};0.15;{op:.1f}" dur="{dur}s" repeatCount="indefinite"/>'
+                       f'</circle>')
+        else:
+            svg.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="{sr:.1f}" fill="{P["star"]}" opacity="{op:.1f}"/>')
     svg.append('<circle cx="150" cy="90" r="36" fill="url(#moon)"/>')
     svg.append('<circle cx="138" cy="80" r="7" fill="#c9b878" opacity="0.6"/>')
     svg.append('<circle cx="165" cy="100" r="5" fill="#c9b878" opacity="0.5"/>')
@@ -165,7 +175,12 @@ def scene_music(P):
     random.seed(11)
     for b in range(7):
         bx=ax+18+b*18; bh=random.uniform(30,120)
-        svg.append(f'<rect x="{bx}" y="{ay+as_-10-bh:.1f}" width="10" height="{bh:.1f}" rx="4" fill="{P["surface2"]}" opacity="0.5"/>')
+        y0=ay+as_-10-bh
+        dur=round(random.uniform(0.7,1.4),2)
+        svg.append(f'<rect x="{bx}" y="{y0:.1f}" width="10" height="{bh:.1f}" rx="4" fill="{P["surface2"]}" opacity="0.5">'
+                   f'<animate attributeName="height" values="{bh:.1f};{bh*0.35:.1f};{bh:.1f}" dur="{dur}s" repeatCount="indefinite"/>'
+                   f'<animate attributeName="y" values="{y0:.1f};{ay+as_-10-bh*0.35:.1f};{y0:.1f}" dur="{dur}s" repeatCount="indefinite"/>'
+                   f'</rect>')
     tx=ax+as_+50
     svg.append(f'<text x="{tx}" y="{ay+45}" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{P["sub"]}">♪ now playing</text>')
     svg.append(f'<text x="{tx}" y="{ay+82}" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="{P["text"]}">lo-fi &amp; late night</text>')
@@ -207,13 +222,17 @@ def wheel(P):
       f'<path id="wpts" d="M{cx-r}, {cy} a {r},{r} 0 1,1 {2*r},0 a {r},{r} 0 1,1 -{2*r},0"/>'
       '</defs>')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#wbg)"/>')
-    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r+22}" fill="url(#wglow)"/>')
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r+22}" fill="url(#wglow)">'
+               f'<animate attributeName="opacity" values="0.4;0.75;0.4" dur="3.2s" repeatCount="indefinite"/></circle>')
+    svg.append('<g>')
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r+14}" fill="none" stroke="{P["border"]}" stroke-width="2" stroke-dasharray="2 12"/>')
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="url(#wac)" stroke-width="14" stroke-dasharray="640 260" transform="rotate(-90 {cx} {cy})" opacity="0.9"/>')
+    svg.append(f'<text font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{P["sub"]}" letter-spacing="3"><textPath href="#wpts" startOffset="2%">AGYING3 · CODE · VIBE · COFFEE · MUSIC · NIGHT · DREAM · </textPath></text>')
+    svg.append(f'<animateTransform attributeName="transform" type="rotate" from="0 {cx} {cy}" to="360 {cx} {cy}" dur="26s" repeatCount="indefinite"/>')
+    svg.append('</g>')
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r-46}" fill="none" stroke="{P["border"]}" stroke-width="1" opacity="0.5"/>')
     svg.append(f'<text x="{cx}" y="{cy-4}" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" fill="{P["text"]}" text-anchor="middle">VIBE</text>')
     svg.append(f'<text x="{cx}" y="{cy+28}" font-family="Consolas, monospace" font-size="14" fill="{P["sub"]}" text-anchor="middle">~/Agying3 $ _</text>')
-    svg.append(f'<text font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{P["sub"]}" letter-spacing="3"><textPath href="#wpts" startOffset="2%">AGYING3 · CODE · VIBE · COFFEE · MUSIC · NIGHT · DREAM · </textPath></text>')
     svg.append('</svg>')
     return ''.join(svg)
 
