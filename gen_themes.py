@@ -1,6 +1,6 @@
 import os, random, math
 
-OUT = r"C:\Users\Administrator\AppData\Local\Temp\sakura_preview\theme_assets"
+OUT = r"H:\Agying3\assets"
 os.makedirs(OUT, exist_ok=True)
 
 # ---- 调色板 ----
@@ -59,11 +59,9 @@ def banner(P):
     <line x1="0" y1="120" x2="1000" y2="120"/>
     <line x1="0" y1="180" x2="1000" y2="180"/>
   </g>
-  <circle cx="92" cy="120" r="54" fill="{P['surface2']}" stroke="url(#accent)" stroke-width="3"/>
-  <text x="92" y="132" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="800" fill="url(#accent)" text-anchor="middle">A3</text>
-  <text x="172" y="108" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="800" fill="{P['text']}">Agying3</text>
-  <text x="174" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="{P['blue']}">代码是船，vibe 是帆。</text>
-  <text x="174" y="184" font-family="Consolas, monospace" font-size="15" fill="{P['sub']}">~/Agying3 $ _</text>
+  <text x="40" y="108" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="800" fill="{P['text']}">Agying3</text>
+  <text x="42" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="{P['blue']}">代码是船，vibe 是帆。</text>
+  <text x="42" y="184" font-family="Consolas, monospace" font-size="15" fill="{P['sub']}">~/Agying3 $ _</text>
 </svg>'''
 
 # ---------- kline ----------
