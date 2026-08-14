@@ -54,14 +54,8 @@ def banner(P):
   </defs>
   <rect x="0" y="0" width="1000" height="240" rx="24" fill="url(#bg)"/>
   <rect x="0" y="0" width="1000" height="240" rx="24" fill="url(#glow)"/>
-  <g stroke="{P['border']}" stroke-width="1" opacity="0.35">
-    <line x1="0" y1="60" x2="1000" y2="60"/>
-    <line x1="0" y1="120" x2="1000" y2="120"/>
-    <line x1="0" y1="180" x2="1000" y2="180"/>
-  </g>
-  <text x="40" y="108" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="800" fill="{P['text']}">Agying3</text>
-  <text x="42" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="{P['blue']}">代码是船，vibe 是帆。</text>
-  <text x="42" y="184" font-family="Consolas, monospace" font-size="15" fill="{P['sub']}">~/Agying3 $ _</text>
+  <text x="40" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="url(#accent)">Agying3</text>
+  <text x="42" y="162" font-family="Consolas, monospace" font-size="16" fill="{P['sub']}">~/Agying3 $ _</text>
 </svg>'''
 
 # ---------- kline ----------
