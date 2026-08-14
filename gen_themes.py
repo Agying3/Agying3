@@ -195,12 +195,35 @@ def footer(P):
     svg.append('</svg>')
     return ''.join(svg)
 
+# ---------- wheel (decorative dial) ----------
+def wheel(P):
+    W,H=1000,360
+    cx,cy,r=500,180,140
+    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="vibe wheel">']
+    svg.append('<defs>'
+      f'<linearGradient id="wbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="{P["bg0"]}"/><stop offset="100%" stop-color="{P["bg1"]}"/></linearGradient>'
+      f'<linearGradient id="wac" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="{P["blue"]}"/><stop offset="50%" stop-color="{P["purple"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient>'
+      f'<radialGradient id="wglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="{P["purple"]}" stop-opacity="0.35"/><stop offset="100%" stop-color="{P["purple"]}" stop-opacity="0"/></radialGradient>'
+      f'<path id="wpts" d="M{cx-r}, {cy} a {r},{r} 0 1,1 {2*r},0 a {r},{r} 0 1,1 -{2*r},0"/>'
+      '</defs>')
+    svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#wbg)"/>')
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r+22}" fill="url(#wglow)"/>')
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r+14}" fill="none" stroke="{P["border"]}" stroke-width="2" stroke-dasharray="2 12"/>')
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="url(#wac)" stroke-width="14" stroke-dasharray="640 260" transform="rotate(-90 {cx} {cy})" opacity="0.9"/>')
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r-46}" fill="none" stroke="{P["border"]}" stroke-width="1" opacity="0.5"/>')
+    svg.append(f'<text x="{cx}" y="{cy-4}" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" fill="{P["text"]}" text-anchor="middle">VIBE</text>')
+    svg.append(f'<text x="{cx}" y="{cy+28}" font-family="Consolas, monospace" font-size="14" fill="{P["sub"]}" text-anchor="middle">~/Agying3 $ _</text>')
+    svg.append(f'<text font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{P["sub"]}" letter-spacing="3"><textPath href="#wpts" startOffset="2%">AGYING3 · CODE · VIBE · COFFEE · MUSIC · NIGHT · DREAM · </textPath></text>')
+    svg.append('</svg>')
+    return ''.join(svg)
+
 # ---------- 生成 ----------
 for P, sfx in [(DARK, "dark"), (LIGHT, "light")]:
     write(f"banner_{sfx}.svg", banner(P))
     write(f"kline_{sfx}.svg", kline(P))
     write(f"scene_night_{sfx}.svg", scene_night(P))
     write(f"scene_music_{sfx}.svg", scene_music(P))
+    write(f"wheel_{sfx}.svg", wheel(P))
     write(f"footer_{sfx}.svg", footer(P))
 
 print("generated:", sorted(os.listdir(OUT)))
