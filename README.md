@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/Agying3">
-    <img src="assets/avatar.png" alt="Agying3" width="160"/>
+    <img src="assets/avatar.svg" alt="Agying3" width="160"/>
   </a>
 </p>
 

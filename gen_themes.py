@@ -337,7 +337,43 @@ def wave(P):
     svg.append('</svg>')
     return ''.join(svg)
 
+# ---------- avatar（左摇右晃）----------
+def avatar():
+    # 把头像 PNG 内嵌进去，保证全员可见；并以底部为支点做钟摆式左右摇摆。
+    # 画布放大到 270x250、支点下移，使头像在 ±9° 摆动时始终完整落在 viewBox 内，
+    # 避免被边缘裁切（旧版 200x200 会被切出"白边"）。
+    ap = os.path.join(OUT, "avatar.png")
+    if os.path.exists(ap):
+        with open(ap, "rb") as f:
+            href = "data:image/png;base64," + base64.b64encode(f.read()).decode("ascii")
+    else:
+        href = "avatar.png"
+    cx, cy, r = 135, 118, 97          # 头像圆心 / 裁切半径
+    ring = 103                        # 墨绿→暖金圆环
+    ix, iy = cx - r, cy - r           # 头像图片左上角
+    px, py = 135, 245                 # 钟摆支点（底部中央，落在画布内）
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="270" height="250" viewBox="0 0 270 250" role="img" aria-label="Agying3 avatar">
+  <defs>
+    <clipPath id="ac"><circle cx="{cx}" cy="{cy}" r="{r}"/></clipPath>
+    <radialGradient id="aring" cx="50%" cy="50%" r="50%">
+      <stop offset="76%" stop-color="#1f7a4d"/>
+      <stop offset="90%" stop-color="#d4a24e"/>
+      <stop offset="100%" stop-color="#1f7a4d"/>
+    </radialGradient>
+  </defs>
+  <g>
+    <circle cx="{cx}" cy="{cy}" r="{ring}" fill="url(#aring)"/>
+    <g clip-path="url(#ac)"><image x="{ix}" y="{iy}" width="194" height="194" href="{href}" preserveAspectRatio="xMidYMid slice"/></g>
+    <animateTransform attributeName="transform" type="rotate"
+      values="-9 {px} {py}; 9 {px} {py}; -9 {px} {py}"
+      keyTimes="0;0.5;1" calcMode="spline"
+      keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"
+      dur="3.2s" repeatCount="indefinite"/>
+  </g>
+</svg>'''
+
 # ---------- 生成 ----------
+write("avatar.svg", avatar())  # 主题无关，生成一份
 for P, sfx in [(DARK, "dark"), (LIGHT, "light")]:
     write(f"banner_{sfx}.svg", banner(P))
     write(f"kline_{sfx}.svg", kline(P))
