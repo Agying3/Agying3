@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agying3 · 今天写什么？</title>
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+       background:#0d1117;color:#e6edf3;font-family:"Segoe UI",system-ui,sans-serif;}
+  h1{font-size:22px;font-weight:800;margin:0 0 4px;}
+  p.sub{color:#8b949e;margin:0 0 24px;font-size:14px;}
+  #wrap{position:relative;width:320px;height:320px;}
+  canvas{border-radius:50%;box-shadow:0 0 40px rgba(47,122,77,.4);}
+  #spin{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+        width:84px;height:84px;border-radius:50%;border:none;cursor:pointer;
+        background:linear-gradient(135deg,#1f7a4d,#d4a24e);color:#0d1117;
+        font-weight:800;font-size:15px;transition:transform .1s;}
+  #spin:active{transform:translate(-50%,-50%) scale(.94);}
+  #result{margin-top:22px;font-size:18px;font-weight:700;min-height:26px;color:#d4a24e;text-align:center;}
+  footer{margin-top:30px;color:#656d76;font-size:12px;}
+  a{color:#3fae8a;}
+</style>
+</head>
+<body>
+  <h1>🎰 今天写什么？</h1>
+  <p class="sub">点中间按钮，让命运决定你的 next commit</p>
+  <div id="wrap">
+    <canvas id="wheel" width="320" height="320"></canvas>
+    <button id="spin">SPIN</button>
+  </div>
+  <div id="result"></div>
+  <footer>来自 <a href="https://github.com/Agying3">Agying3</a> 主页的小彩蛋</footer>
+<script>
+const items=["写 Rust","看文档","听歌摸鱼","重构代码","学 Slint","开新坑","修 Bug","喝杯咖啡"];
+const colors=["#1f7a4d","#3fae8a","#d4a24e","#2f8f5f","#b8860b","#1f7a4d","#3fae8a","#d4a24e"];
+const cv=document.getElementById("wheel"),ctx=cv.getContext("2d");
+const N=items.length,R=cv.width/2,seg=2*Math.PI/N;
+let rot=0,spinning=false;
+function draw(){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  for(let i=0;i<N;i++){
+    ctx.beginPath();ctx.moveTo(R,R);
+    ctx.arc(R,R,R-4,i*seg+rot,(i+1)*seg+rot);ctx.closePath();
+    ctx.fillStyle=colors[i%colors.length];ctx.fill();
+    ctx.save();ctx.translate(R,R);ctx.rotate(i*seg+rot+seg/2);
+    ctx.fillStyle="#0d1117";ctx.font="bold 14px sans-serif";
+    ctx.textAlign="right";ctx.fillText(items[i],R-18,5);ctx.restore();
+  }
+  ctx.beginPath();ctx.arc(R,R,8,0,7);ctx.fillStyle="#0d1117";ctx.fill();
+}
+function spin(){
+  if(spinning)return;spinning=true;
+  const turns=5+Math.random()*3,dur=2600,t0=performance.now(),end=turns*2*Math.PI;
+  function step(t){
+    const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);
+    rot=(end*e)%(2*Math.PI);draw();
+    if(p<1)requestAnimationFrame(step);
+    else{spinning=false;
+      const idx=Math.floor((N-(rot/seg))%N+N)%N;
+      document.getElementById("result").textContent="→ 命运说："+items[idx];}
+  }
+  requestAnimationFrame(step);
+}
+draw();
+document.getElementById("spin").addEventListener("click",spin);
+</script>
+</body>
+</html>
