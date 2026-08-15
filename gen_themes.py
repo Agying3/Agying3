@@ -271,62 +271,48 @@ def footer(P):
     svg.append('</svg>')
     return ''.join(svg)
 
-# ---------- wheel (decorative dial) ----------
+# ---------- wheel (vinyl turntable) ----------
 def wheel(P):
     W,H=1000,360
-    cx,cy,r=500,180,140
-    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="vibe wheel">']
+    cx,cy,R=500,180,150
+    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="vibe turntable">']
     svg.append('<defs>'
       f'<linearGradient id="wbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="{P["bg0"]}"/><stop offset="100%" stop-color="{P["bg1"]}"/></linearGradient>'
-      '<linearGradient id="wac" x1="0" y1="0" x2="1" y2="0">'
-        f'<stop offset="0%" stop-color="{P["blue"]}"><animate attributeName="stop-color" values="{P["blue"]};{P["pink"]};{P["purple"]};{P["blue"]}" dur="5s" repeatCount="indefinite"/></stop>'
-        f'<stop offset="50%" stop-color="{P["purple"]}"><animate attributeName="stop-color" values="{P["purple"]};{P["blue"]};{P["pink"]};{P["purple"]}" dur="5s" repeatCount="indefinite"/></stop>'
-        f'<stop offset="100%" stop-color="{P["pink"]}"><animate attributeName="stop-color" values="{P["pink"]};{P["purple"]};{P["blue"]};{P["pink"]}" dur="5s" repeatCount="indefinite"/></stop>'
-      '</linearGradient>'
-      f'<radialGradient id="wglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="{P["purple"]}" stop-opacity="0.35"/><stop offset="100%" stop-color="{P["purple"]}" stop-opacity="0"/></radialGradient>'
-      f'<path id="wpts" d="M{cx-r}, {cy} a {r},{r} 0 1,1 {2*r},0 a {r},{r} 0 1,1 -{2*r},0"/>'
+      f'<radialGradient id="lbl" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="{P["pink"]}"/><stop offset="100%" stop-color="{P["blue"]}"/></radialGradient>'
+      f'<radialGradient id="wglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="{P["pink"]}" stop-opacity="0.3"/><stop offset="100%" stop-color="{P["pink"]}" stop-opacity="0"/></radialGradient>'
       '</defs>')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#wbg)"/>')
-    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r+22}" fill="url(#wglow)">'
-               f'<animate attributeName="opacity" values="0.4;0.75;0.4" dur="3.2s" repeatCount="indefinite"/></circle>')
-    # 旋转主环
+    # 外发光呼吸
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{R+24}" fill="url(#wglow)">'
+               f'<animate attributeName="opacity" values="0.4;0.85;0.4" dur="3.4s" repeatCount="indefinite"/></circle>')
+    # 黑胶盘（整体旋转，像在放唱片）
     svg.append('<g>')
-    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r+14}" fill="none" stroke="{P["border"]}" stroke-width="2" stroke-dasharray="2 12"/>')
-    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="url(#wac)" stroke-width="14" stroke-dasharray="640 260" transform="rotate(-90 {cx} {cy})" opacity="0.9"/>')
-    svg.append(f'<text font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{P["sub"]}" letter-spacing="3"><textPath href="#wpts" startOffset="2%">AGYING3 · CODE · VIBE · COFFEE · MUSIC · NIGHT · DREAM · </textPath></text>')
-    svg.append(f'<animateTransform attributeName="transform" type="rotate" from="0 {cx} {cy}" to="360 {cx} {cy}" dur="26s" repeatCount="indefinite"/>')
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="{P["bg2"]}" stroke="{P["border"]}" stroke-width="1.5"/>')
+    for i in range(1, 6):
+        rr = R * (0.34 + i*0.11)
+        svg.append(f'<circle cx="{cx}" cy="{cy}" r="{rr:.1f}" fill="none" stroke="{P["sub"]}" stroke-width="1" opacity="0.45"/>')
+    # 高光弧（独立旋转，制造反光）
+    svg.append(f'<path d="M {cx-R*0.72:.1f} {cy-R*0.64:.1f} A {R*0.72:.1f} {R*0.72:.1f} 0 0 1 {cx+R*0.72:.1f} {cy-R*0.64:.1f}" '
+               f'fill="none" stroke="{P["pink"]}" stroke-width="3" opacity="0.4" stroke-linecap="round">'
+               f'<animateTransform attributeName="transform" type="rotate" from="0 {cx} {cy}" to="360 {cx} {cy}" dur="6s" repeatCount="indefinite"/></path>')
+    # 中心标签（呼吸）
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{R*0.3:.1f}" fill="url(#lbl)">'
+               f'<animate attributeName="opacity" values="0.85;1;0.85" dur="2.6s" repeatCount="indefinite"/></circle>')
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{R*0.05:.1f}" fill="{P["bg0"]}"/>')
+    svg.append(f'<text x="{cx}" y="{cy+6}" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="800" fill="{P["foottext"]}" text-anchor="middle">VIBE</text>')
+    svg.append(f'<animateTransform attributeName="transform" type="rotate" from="0 {cx} {cy}" to="360 {cx} {cy}" dur="8s" repeatCount="indefinite"/>')
     svg.append('</g>')
-    # 轨道星屑（反向旋转）
-    svg.append('<g>')
-    for s in range(6):
-        ang = s*60; rad = r+52
-        sx = cx + rad*math.cos(math.radians(ang)); sy = cy + rad*math.sin(math.radians(ang))
-        svg.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="3" fill="{P["yellow"]}"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" begin="{s*0.2:.1f}s" repeatCount="indefinite"/></circle>')
-    svg.append(f'<animateTransform attributeName="transform" type="rotate" from="360 {cx} {cy}" to="0 {cx} {cy}" dur="18s" repeatCount="indefinite"/>')
-    svg.append('</g>')
-    svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r-46}" fill="none" stroke="{P["border"]}" stroke-width="1" opacity="0.5"/>')
-    svg.append(f'<text x="{cx}" y="{cy-4}" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" fill="{P["text"]}" text-anchor="middle">VIBE</text>')
-    svg.append(f'<text x="{cx}" y="{cy+28}" font-family="Consolas, monospace" font-size="14" fill="{P["sub"]}" text-anchor="middle">~/Agying3 $ _</text>')
     svg.append('</svg>')
     return ''.join(svg)
 
 # ---------- 波浪分隔 ----------
 def wave(P):
-    W,H=1000,120
-    def wpath(phase, amp=15):
-        d=[f"M0,{H*0.5:.0f}"]
-        for x in range(0, W+20, 20):
-            y = H*0.5 + amp*math.sin(x/120.0 + phase)
-            d.append(f"L{x},{y:.1f}")
-        d.append(f"L{W},{H} L0,{H} Z")
-        return ' '.join(d)
-    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="wave">']
-    svg.append('<defs><linearGradient id="wv" x1="0" y1="0" x2="1" y2="0">'
-      f'<stop offset="0%" stop-color="{P["blue"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient></defs>')
-    svg.append(f'<path fill="url(#wv)" opacity="0.5">'
-               f'<animate attributeName="d" values="{wpath(0)};{wpath(math.pi)};{wpath(0)}" dur="12s" repeatCount="indefinite"/></path>')
-    svg.append(f'<path fill="{P["pink"]}" opacity="0.16">'
-               f'<animate attributeName="d" values="{wpath(math.pi/2)};{wpath(math.pi*1.5)};{wpath(math.pi/2)}" dur="15s" repeatCount="indefinite"/></path>')
+    W,H=1000,80
+    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="divider">']
+    svg.append(f'<line x1="0" y1="{H-1}" x2="{W}" y2="{H-1}" stroke="{P["border"]}" stroke-width="1" opacity="0.35"/>')
+    path = "M 30 44 C 200 36, 380 52, 520 40 C 660 30, 820 48, 970 42"
+    svg.append(f'<path d="{path}" fill="none" stroke="{P["blue"]}" stroke-width="2" stroke-linecap="round" opacity="0.4"/>')
+    svg.append(f'<circle cx="520" cy="18" r="2.5" fill="{P["pink"]}" opacity="0.45"/>')
     svg.append('</svg>')
     return ''.join(svg)
 
