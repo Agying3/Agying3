@@ -17,7 +17,6 @@
 <p align="center">
   <a href="https://github.com/Agying3"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-Agying3-1f7a4d?style=for-the-badge&logo=github&logoColor=white"/></a>
   <a href="mailto:11224600cc@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-11224600cc-d4a24e?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-  <a href="https://agying3.github.io/Agying3/game.html"><img alt="Game" src="https://img.shields.io/badge/小游戏-点我玩-3fae8a?style=for-the-badge"/></a>
 </p>
 
 <p align="center">
@@ -105,6 +104,20 @@
   <a href="https://github.com/Agying3/auto-send"><img alt="auto-send" src="https://img.shields.io/badge/AutoSend-视频上传-3fae8a?style=for-the-badge&logo=github&logoColor=white"/></a>
   <a href="https://github.com/Agying3?tab=repositories"><img alt="More" src="https://img.shields.io/badge/更多-Repositories-d4a24e?style=for-the-badge&logo=github&logoColor=white"/></a>
 </p>
+
+<p align="center"><sub>💣 点一下丢炸弹 · 画面会晃（纯主页交互，不跳页）</sub></p>
+
+<details>
+  <summary>💣 丢炸弹</summary>
+  <br>
+  <a href="https://github.com/Agying3">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/bomb_dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/bomb_light.svg">
+      <img src="assets/bomb_dark.svg" alt="炸弹爆炸" width="520"/>
+    </picture>
+  </a>
+</details>
 
 <table>
   <tr>
