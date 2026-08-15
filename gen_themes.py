@@ -3,29 +3,29 @@ import os, random, math
 OUT = r"H:\Agying3\assets"
 os.makedirs(OUT, exist_ok=True)
 
-# ---- 调色板：樱粉暖阳（珊瑚橙 → 樱粉 → 暖金）----
+# ---- 调色板：墨绿流金（深松绿 → 暖金）----
 DARK = dict(
     bg0="#0d1117", bg1="#161b22", bg2="#21262d",
     surface="#161b22", surface2="#0d1117", border="#30363d",
     text="#e6edf3", sub="#8b949e",
-    blue="#ff7e5f", purple="#ff6b9d", pink="#ffd479",
+    blue="#1f7a4d", purple="#3fae8a", pink="#d4a24e",
     red="#ff7b72", green="#3fb950", yellow="#e3b341",
     sky0="#0b0e1a", sky1="#161b22", star="#e6edf3",
-    winbg="#0a0d16", winfill="#1b2230", cityglow="#ffd479",
+    winbg="#0a0d16", winfill="#1b2230", cityglow="#d4a24e",
     ground="#11151c", groundline="#222a35",
-    mon0="#ff7e5f", mon1="#ff6b9d",
+    mon0="#1f7a4d", mon1="#d4a24e",
     foottext="#0d1117",
 )
 LIGHT = dict(
     bg0="#f6f8fa", bg1="#eaeef2", bg2="#d0d7de",
     surface="#ffffff", surface2="#f6f8fa", border="#d0d7de",
     text="#1f2328", sub="#656d76",
-    blue="#e8590c", purple="#c2255c", pink="#b8860b",
+    blue="#1f7a4d", purple="#2f8f5f", pink="#b8860b",
     red="#cf222e", green="#1a7f37", yellow="#9a6700",
     sky0="#acc6e6", sky1="#dce9f5", star="#ffffff",
     winbg="#cdd6e0", winfill="#aeb9c7", cityglow="#bf8700",
     ground="#e1e6eb", groundline="#c9d1d9",
-    mon0="#e8590c", mon1="#c2255c",
+    mon0="#1f7a4d", mon1="#b8860b",
     foottext="#ffffff",
 )
 
@@ -134,7 +134,7 @@ def scene_night(P):
       f'<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="{P["sky0"]}"/><stop offset="100%" stop-color="{P["sky1"]}"/></linearGradient>'
       f'<linearGradient id="mon" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="{P["mon0"]}"/><stop offset="100%" stop-color="{P["mon1"]}"/></linearGradient>'
       '<radialGradient id="moon" cx="40%" cy="40%" r="60%"><stop offset="0%" stop-color="#f5e6b8"/><stop offset="100%" stop-color="#d9c48a"/></radialGradient>'
-      '<linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#39d98a"/><stop offset="50%" stop-color="#ff6b9d"/><stop offset="100%" stop-color="#39d98a"/></linearGradient>'
+      '<linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#39d98a"/><stop offset="50%" stop-color="#d4a24e"/><stop offset="100%" stop-color="#39d98a"/></linearGradient>'
       '</defs>')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#sky)"/>')
     # 极光带
@@ -313,20 +313,20 @@ def wheel(P):
 # ---------- 波浪分隔 ----------
 def wave(P):
     W,H=1000,120
-    def wpath(phase):
+    def wpath(phase, amp=15):
         d=[f"M0,{H*0.5:.0f}"]
         for x in range(0, W+20, 20):
-            y = H*0.5 + 22*math.sin(x/90.0 + phase)
+            y = H*0.5 + amp*math.sin(x/120.0 + phase)
             d.append(f"L{x},{y:.1f}")
         d.append(f"L{W},{H} L0,{H} Z")
         return ' '.join(d)
     svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="wave">']
     svg.append('<defs><linearGradient id="wv" x1="0" y1="0" x2="1" y2="0">'
-      f'<stop offset="0%" stop-color="{P["blue"]}"/><stop offset="50%" stop-color="{P["purple"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient></defs>')
-    svg.append(f'<path fill="url(#wv)" opacity="0.9">'
-               f'<animate attributeName="d" values="{wpath(0)};{wpath(math.pi)};{wpath(0)}" dur="7s" repeatCount="indefinite"/></path>')
-    svg.append(f'<path fill="{P["purple"]}" opacity="0.35">'
-               f'<animate attributeName="d" values="{wpath(math.pi/2)};{wpath(math.pi*1.5)};{wpath(math.pi/2)}" dur="9s" repeatCount="indefinite"/></path>')
+      f'<stop offset="0%" stop-color="{P["blue"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient></defs>')
+    svg.append(f'<path fill="url(#wv)" opacity="0.5">'
+               f'<animate attributeName="d" values="{wpath(0)};{wpath(math.pi)};{wpath(0)}" dur="12s" repeatCount="indefinite"/></path>')
+    svg.append(f'<path fill="{P["pink"]}" opacity="0.16">'
+               f'<animate attributeName="d" values="{wpath(math.pi/2)};{wpath(math.pi*1.5)};{wpath(math.pi/2)}" dur="15s" repeatCount="indefinite"/></path>')
     svg.append('</svg>')
     return ''.join(svg)
 
