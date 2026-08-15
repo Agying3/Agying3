@@ -105,23 +105,6 @@
   <a href="https://github.com/Agying3?tab=repositories"><img alt="More" src="https://img.shields.io/badge/更多-Repositories-d4a24e?style=for-the-badge&logo=github&logoColor=white"/></a>
 </p>
 
-<p align="center"><sub>💣 点下方圆角按钮 · 画面会晃（内联动画，不跳页）</sub></p>
-
-<p align="center">
-  <a href="#bomb"><img alt="丢炸弹" src="https://img.shields.io/badge/%F0%9F%92%A3%20%E4%B8%A2%E7%82%B8%E5%BC%B9--1f7a4d?style=flat"/></a>
-</p>
-
-<a id="bomb"></a>
-<p align="center">
-  <a href="https://github.com/Agying3">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/bomb_dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="assets/bomb_light.svg">
-      <img src="assets/bomb_dark.svg" alt="炸弹爆炸" width="520"/>
-    </picture>
-  </a>
-</p>
-
 <table>
   <tr>
     <td align="center" width="50%">
