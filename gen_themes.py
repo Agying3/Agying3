@@ -256,18 +256,12 @@ def footer(P):
     FW, FH = 1000, 100
     svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{FW}" height="{FH}" viewBox="0 0 {FW} {FH}" role="img" aria-label="footer">']
     svg.append('<defs><linearGradient id="fbg" x1="0" y1="0" x2="1" y2="0">'
-      f'<stop offset="0%" stop-color="{P["blue"]}"><animate attributeName="stop-color" values="{P["blue"]};{P["pink"]};{P["purple"]};{P["blue"]}" dur="6s" repeatCount="indefinite"/></stop>'
-      f'<stop offset="50%" stop-color="{P["pink"]}"><animate attributeName="stop-color" values="{P["pink"]};{P["blue"]};{P["purple"]};{P["pink"]}" dur="6s" repeatCount="indefinite"/></stop>'
-      f'<stop offset="100%" stop-color="{P["purple"]}"><animate attributeName="stop-color" values="{P["purple"]};{P["blue"]};{P["pink"]};{P["purple"]}" dur="6s" repeatCount="indefinite"/></stop>'
-      '</linearGradient></defs>')
+      f'<stop offset="0%" stop-color="{P["blue"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient></defs>')
     svg.append(f'<rect x="0" y="0" width="{FW}" height="{FH}" fill="{P["bg0"]}"/>')
-    path = "M0,55 "
-    for x in range(0, FW+20, 20):
-        yv = 55 + 16*math.sin(x/70.0)
-        path += f"L{x},{yv:.1f} "
-    path += f"L{FW},100 L0,100 Z"
-    svg.append(f'<path d="{path}" fill="url(#fbg)" opacity="0.9"/>')
-    svg.append(f'<text x="{FW/2}" y="62" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{P["foottext"]}" text-anchor="middle" font-weight="700">Agying3</text>')
+    svg.append(f'<line x1="0" y1="50" x2="{FW}" y2="50" stroke="{P["border"]}" stroke-width="1" opacity="0.4"/>')
+    svg.append(f'<rect x="0" y="54" width="{FW}" height="2" fill="url(#fbg)" opacity="0.7"/>')
+    svg.append(f'<text x="{FW/2}" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{P["text"]}" text-anchor="middle" font-weight="700">Agying3</text>')
+    svg.append(f'<circle cx="{FW/2}" cy="72" r="3" fill="{P["pink"]}" opacity="0.6"/>')
     svg.append('</svg>')
     return ''.join(svg)
 

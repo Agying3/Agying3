@@ -102,7 +102,7 @@
 
 <p align="center">
   <a href="https://github.com/Agying3/DMShoot"><img alt="DMShoot" src="https://img.shields.io/badge/DMShoot-私信聚合-1f7a4d?style=for-the-badge&logo=github&logoColor=white"/></a>
-  <a href="https://github.com/Agying3/auto-send"><img alt="auto-send" src="https://img.shields.io/badge/auto%2Dsend-视频上传-3fae8a?style=for-the-badge&logo=github&logoColor=white"/></a>
+  <a href="https://github.com/Agying3/auto-send"><img alt="auto-send" src="https://img.shields.io/badge/AutoSend-视频上传-3fae8a?style=for-the-badge&logo=github&logoColor=white"/></a>
   <a href="https://github.com/Agying3?tab=repositories"><img alt="More" src="https://img.shields.io/badge/更多-Repositories-d4a24e?style=for-the-badge&logo=github&logoColor=white"/></a>
 </p>
 
