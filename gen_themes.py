@@ -33,6 +33,30 @@ def write(name, svg):
     with open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
         f.write(svg)
 
+# ---------- 内嵌 Terminus 字体（子集化，base64）----------
+# 让没有安装 Terminus 的查看者也看到一致字体（全员一致）。
+import base64
+_FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
+_REG_B64, _BOLD_B64 = None, None
+
+def terminus_fontface():
+    global _REG_B64, _BOLD_B64
+    if _REG_B64 is None:
+        with open(os.path.join(_FONT_DIR, "terminus_regular.subset.ttf"), "rb") as f:
+            _REG_B64 = base64.b64encode(f.read()).decode("ascii")
+        with open(os.path.join(_FONT_DIR, "terminus_bold.subset.ttf"), "rb") as f:
+            _BOLD_B64 = base64.b64encode(f.read()).decode("ascii")
+    return (
+        '<style>'
+        "@font-face{font-family:'Terminus';font-weight:400;font-style:normal;"
+        f"src:url(data:font/ttf;base64,{_REG_B64}) format('truetype');}}"
+        "@font-face{font-family:'Terminus';font-weight:700;font-style:normal;"
+        f"src:url(data:font/ttf;base64,{_BOLD_B64}) format('truetype');}}"
+        '</style>'
+    )
+
+FONT = "'Terminus', monospace"
+
 # 随机闪烁星屑（多处复用）
 def sparkles(P, n, W, H, seed=1, rmax=2.2, opacity=0.8, ymax=None):
     random.seed(seed)
@@ -50,6 +74,7 @@ def sparkles(P, n, W, H, seed=1, rmax=2.2, opacity=0.8, ymax=None):
 def banner(P):
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="240" viewBox="0 0 1000 240" role="img" aria-label="Agying3 banner">
   <defs>
+    {terminus_fontface()}
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="{P['bg0']}"/>
       <stop offset="55%" stop-color="{P['bg1']}"/>
@@ -69,9 +94,9 @@ def banner(P):
   <rect x="0" y="0" width="1000" height="240" rx="24" fill="url(#bg)"/>
   <rect x="0" y="0" width="1000" height="240" rx="24" fill="url(#glow)"/>
   {sparkles(P, 16, 1000, 240, seed=21, rmax=1.8)}
-  <text x="40" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="url(#accent)" filter="url(#neon)">Agying3<animate attributeName="opacity" values="0.35;0.9;0.35" dur="2.4s" repeatCount="indefinite"/></text>
-  <text x="40" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="url(#accent)">Agying3</text>
-  <text x="42" y="162" font-family="Consolas, monospace" font-size="16" fill="{P['sub']}">~/Agying3 $ _</text>
+  <text x="40" y="120" font-family="{FONT}" font-size="52" font-weight="800" fill="url(#accent)" filter="url(#neon)">Agying3<animate attributeName="opacity" values="0.35;0.9;0.35" dur="2.4s" repeatCount="indefinite"/></text>
+  <text x="40" y="120" font-family="{FONT}" font-size="52" font-weight="800" fill="url(#accent)">Agying3</text>
+  <text x="42" y="162" font-family="{FONT}" font-size="16" fill="{P['sub']}">~/Agying3 $ _</text>
   <rect x="170" y="148" width="11" height="18" rx="2" fill="url(#accent)">
     <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.55;1" dur="1.1s" repeatCount="indefinite"/>
   </rect>
@@ -211,6 +236,7 @@ def scene_music(P):
         f'<stop offset="100%" stop-color="{P["pink"]}"><animate attributeName="stop-color" values="{P["pink"]};{P["blue"]};{P["purple"]};{P["pink"]}" dur="4s" repeatCount="indefinite"/></stop>'
       '</linearGradient>'
       '</defs>')
+    svg.append(terminus_fontface())
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#bg2)"/>')
     cardx,cardy,cardw,cardh=120,60,760,240
     svg.append(f'<rect x="{cardx}" y="{cardy}" width="{cardw}" height="{cardh}" rx="20" fill="{P["surface2"]}" stroke="{P["border"]}" stroke-width="1.5"/>')
@@ -234,14 +260,14 @@ def scene_music(P):
     # 飘动的音符
     for k in range(3):
         nx = ax+as_+150 + k*120
-        svg.append(f'<text x="{nx}" y="{ay+as_-20}" font-size="22" fill="{P["purple"]}" opacity="0">♪'
+        svg.append(f'<text x="{nx}" y="{ay+as_-20}" font-family="{FONT}" font-size="22" fill="{P["purple"]}" opacity="0">♪'
           f'<animate attributeName="opacity" values="0;0.9;0" dur="3s" begin="{k*1}s" repeatCount="indefinite"/>'
           f'<animateTransform attributeName="transform" type="translate" values="0 0; 0 -130" dur="3s" begin="{k*1}s" repeatCount="indefinite"/>'
           f'</text>')
     tx=ax+as_+50
-    svg.append(f'<text x="{tx}" y="{ay+45}" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{P["sub"]}">♪ now playing</text>')
-    svg.append(f'<text x="{tx}" y="{ay+82}" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="{P["text"]}">lo-fi &amp; late night</text>')
-    svg.append(f'<text x="{tx}" y="{ay+112}" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="{P["sub"]}">Agying3 · coding mix</text>')
+    svg.append(f'<text x="{tx}" y="{ay+45}" font-family="{FONT}" font-size="15" fill="{P["sub"]}">♪ now playing</text>')
+    svg.append(f'<text x="{tx}" y="{ay+82}" font-family="{FONT}" font-size="24" font-weight="700" fill="{P["text"]}">lo-fi &amp; late night</text>')
+    svg.append(f'<text x="{tx}" y="{ay+112}" font-family="{FONT}" font-size="15" fill="{P["sub"]}">Agying3 · coding mix</text>')
     pw=420; p0=ay+150
     svg.append(f'<rect x="{tx}" y="{p0}" width="{pw}" height="6" rx="3" fill="{P["border"]}"/>')
     svg.append(f'<rect x="{tx}" y="{p0}" width="{pw*0.42:.0f}" height="6" rx="3" fill="url(#al)"/>')
@@ -255,12 +281,12 @@ def scene_music(P):
 def footer(P):
     FW, FH = 1000, 100
     svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{FW}" height="{FH}" viewBox="0 0 {FW} {FH}" role="img" aria-label="footer">']
-    svg.append('<defs><linearGradient id="fbg" x1="0" y1="0" x2="1" y2="0">'
+    svg.append('<defs>' + terminus_fontface() + '<linearGradient id="fbg" x1="0" y1="0" x2="1" y2="0">'
       f'<stop offset="0%" stop-color="{P["blue"]}"/><stop offset="100%" stop-color="{P["pink"]}"/></linearGradient></defs>')
     svg.append(f'<rect x="0" y="0" width="{FW}" height="{FH}" fill="{P["bg0"]}"/>')
     svg.append(f'<line x1="0" y1="50" x2="{FW}" y2="50" stroke="{P["border"]}" stroke-width="1" opacity="0.4"/>')
     svg.append(f'<rect x="0" y="54" width="{FW}" height="2" fill="url(#fbg)" opacity="0.7"/>')
-    svg.append(f'<text x="{FW/2}" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{P["text"]}" text-anchor="middle" font-weight="700">Agying3</text>')
+    svg.append(f'<text x="{FW/2}" y="42" font-family="{FONT}" font-size="14" fill="{P["text"]}" text-anchor="middle" font-weight="700">Agying3</text>')
     svg.append(f'<circle cx="{FW/2}" cy="72" r="3" fill="{P["pink"]}" opacity="0.6"/>')
     svg.append('</svg>')
     return ''.join(svg)
@@ -275,6 +301,7 @@ def wheel(P):
       f'<radialGradient id="lbl" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="{P["pink"]}"/><stop offset="100%" stop-color="{P["blue"]}"/></radialGradient>'
       f'<radialGradient id="wglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="{P["pink"]}" stop-opacity="0.3"/><stop offset="100%" stop-color="{P["pink"]}" stop-opacity="0"/></radialGradient>'
       '</defs>')
+    svg.append(terminus_fontface())
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#wbg)"/>')
     # 外发光呼吸
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{R+24}" fill="url(#wglow)">'
@@ -293,7 +320,7 @@ def wheel(P):
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{R*0.3:.1f}" fill="url(#lbl)">'
                f'<animate attributeName="opacity" values="0.85;1;0.85" dur="2.6s" repeatCount="indefinite"/></circle>')
     svg.append(f'<circle cx="{cx}" cy="{cy}" r="{R*0.05:.1f}" fill="{P["bg0"]}"/>')
-    svg.append(f'<text x="{cx}" y="{cy+6}" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="800" fill="{P["foottext"]}" text-anchor="middle">VIBE</text>')
+    svg.append(f'<text x="{cx}" y="{cy+6}" font-family="{FONT}" font-size="26" font-weight="800" fill="{P["foottext"]}" text-anchor="middle">VIBE</text>')
     svg.append(f'<animateTransform attributeName="transform" type="rotate" from="0 {cx} {cy}" to="360 {cx} {cy}" dur="8s" repeatCount="indefinite"/>')
     svg.append('</g>')
     svg.append('</svg>')
