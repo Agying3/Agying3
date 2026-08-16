@@ -1,7 +1,17 @@
 <p align="center">
-  <a href="https://github.com/Agying3">
-    <img src="assets/avatar.svg" alt="Agying3" width="160"/>
-  </a>
+  <table align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://github.com/Agying3">
+          <img src="assets/avatar.svg" alt="Agying3" width="160"/>
+        </a>
+      </td>
+      <td width="14"></td>
+      <td align="center" valign="middle">
+        <img src="assets/my_drawing.svg" alt="药丸·双环" width="120"/>
+      </td>
+    </tr>
+  </table>
 </p>
 
 <p align="center">
