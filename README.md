@@ -160,16 +160,6 @@
 
 <!-- DRAWING_CARD_BOTTOM:START -->
 <p align="center">
-  <table align="center" cellpadding="0" cellspacing="0">
-    <tr>
-      <td align="center" valign="middle">
-        <img src="assets/vinyl.svg" alt="黑胶唱片" width="120"/>
-      </td>
-      <td width="14"></td>
-      <td align="center" valign="middle">
-        <img src="assets/my_drawing.svg" alt="药丸·双环" width="120"/>
-      </td>
-    </tr>
-  </table>
+  <img src="assets/my_drawing_widget.svg" alt="NOW SPINNING" width="360"/>
 </p>
 <!-- DRAWING_CARD_BOTTOM:END -->
