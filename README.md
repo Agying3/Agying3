@@ -20,8 +20,8 @@
 </p>
 
 <p align="center">
-  <img alt="学习" src="https://img.shields.io/badge/学习中-Rust%20%2B%20Slint-1f7a4d?style=for-the-badge"/>
-  <img alt="状态" src="https://img.shields.io/badge/状态-接活中-3fae8a?style=for-the-badge"/>
+  <img alt="学习" src="https://img.shields.io/badge/学习�?Rust%20%2B%20Slint-1f7a4d?style=for-the-badge"/>
+  <img alt="状�? src="https://img.shields.io/badge/状�?接活�?3fae8a?style=for-the-badge"/>
 </p>
 
 <p align="center">
@@ -53,7 +53,7 @@
 </p>
 
 <p align="center">
-  <sub>👇 点击图片可跳转对应页面</sub>
+  <sub>👇 点击图片可跳转对应页�?/sub>
 </p>
 
 <table>
@@ -160,6 +160,8 @@
 
 <!-- DRAWING_CARD_BOTTOM:START -->
 <p align="center">
-  <img src="assets/my_drawing_widget.svg" alt="NOW SPINNING" width="360"/>
+  <img src="assets/my_drawing_widget.svg
+<p align="center"><img src="assets/three_led.gif" width="90" alt="status led"></p>" alt="NOW SPINNING" width="360"/>
 </p>
 <!-- DRAWING_CARD_BOTTOM:END -->
+
