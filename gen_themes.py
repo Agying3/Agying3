@@ -104,50 +104,64 @@ def banner(P):
 
 # ---------- kline ----------
 def kline(P):
+    """滚动 K 线：价格随机游走生成 varied 蜡烛，整组向左平移形成「实时前进」感；
+    后半段按索引取模复制前半段，使平移一个屏幕宽度后无缝循环。
+    注：GitHub 以 <img> 渲染 SVG 时剥离 <script>，无法真正随机；
+    这里用固定种子生成多样序列来模拟实时跳动。"""
     random.seed(42)
     W,H = 1000, 300
     padL, padR, padT, padB = 60, 20, 24, 24
     plotW = W - padL - padR; plotH = H - padT - padB
-    n = 32; price = 100.0
-    opens=[]; closes=[]; highs=[]; lows=[]
-    for i in range(n):
+    pitch = 26; cw = 15
+    visibleN = int(plotW / pitch)            # 一屏可见蜡烛数
+    N = visibleN * 2 + 8                      # 总数（后半复制前半，并多留几根保证滚动覆盖）
+    price = 100.0
+    o=[]; c=[]; h=[]; l=[]
+    for i in range(visibleN):
         change = random.uniform(-6, 6.5)
-        o = price; c = o + change
-        hi = max(o,c) + random.uniform(0,3); lo = min(o,c) - random.uniform(0,3)
-        opens.append(o); closes.append(c); highs.append(hi); lows.append(lo); price = c
-    minP = min(min(lows), min(opens)) - 2; maxP = max(max(highs), max(closes)) + 2
-    def x(i): return padL + plotW*(i+0.5)/n
+        oo = price; cc = oo + change
+        hi = max(oo,cc) + random.uniform(0,3); lo = min(oo,cc) - random.uniform(0,3)
+        o.append(oo); c.append(cc); h.append(hi); l.append(lo); price = cc
+    for j in range(visibleN, N):              # 复制前半（取模），保证无缝循环
+        k = j % visibleN
+        o.append(o[k]); c.append(c[k]); h.append(h[k]); l.append(l[k])
+    minP = min(min(l), min(o)) - 2; maxP = max(max(h), max(c)) + 2
+    def x(i): return padL + pitch*(i+0.5)
     def y(p): return padT + plotH*(1-(p-minP)/(maxP-minP))
-    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="K-line">']
-    svg.append(f'<defs><linearGradient id="kbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="{P["bg0"]}"/><stop offset="100%" stop-color="{P["bg1"]}"/></linearGradient></defs>')
+    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
+         f'viewBox="0 0 {W} {H}" role="img" aria-label="K-line">']
+    svg.append(f'<defs><linearGradient id="kbg" x1="0" y1="0" x2="0" y2="1">'
+               f'<stop offset="0%" stop-color="{P["bg0"]}"/>'
+               f'<stop offset="100%" stop-color="{P["bg1"]}"/></linearGradient></defs>')
     svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#kbg)"/>')
     svg.append(f'<g stroke="{P["border"]}" stroke-width="1" opacity="0.4">')
     for g in range(5):
         gy = padT + plotH*g/4
         svg.append(f'<line x1="{padL}" y1="{gy:.1f}" x2="{W-padR}" y2="{gy:.1f}"/>')
     svg.append('</g>')
-    svg.append(f'<polyline fill="none" stroke="{P["blue"]}" stroke-width="2" opacity="0.8" points="')
-    pts=[]
-    for i in range(n):
-        ma = sum(closes[max(0,i-3):i+1])/min(i+1,4)
-        pts.append(f'{x(i):.1f},{y(ma):.1f}')
-    svg.append(' '.join(pts)+'"/>')
-    # 扫描线（上下扫动）
+    # 滚动组：蜡烛 + 均线一起向左平移
+    g=[]
+    ma=[sum(c[max(0,i-3):i+1])/min(i+1,4) for i in range(N)]
+    pts=' '.join(f'{x(i):.1f},{y(ma[i]):.1f}' for i in range(N))
+    g.append(f'<polyline fill="none" stroke="{P["blue"]}" stroke-width="2" opacity="0.8" points="{pts}"/>')
+    for i in range(N):
+        col = P["red"] if c[i] >= o[i] else P["green"]
+        cx = x(i); yo=y(o[i]); yc=y(c[i]); top=min(yo,yc); hgt=max(abs(yc-yo),1.5)
+        g.append(f'<line x1="{cx:.1f}" y1="{y(h[i]):.1f}" x2="{cx:.1f}" y2="{y(l[i]):.1f}" stroke="{col}" stroke-width="1.5"/>')
+        g.append(f'<rect x="{cx-cw/2:.1f}" y="{top:.1f}" width="{cw:.1f}" height="{hgt:.1f}" fill="{col}" rx="1"/>')
+    dur = 14
+    svg.append(f'<g>{"".join(g)}'
+               f'<animateTransform attributeName="transform" type="translate" '
+               f'values="0 0;{-visibleN*pitch} 0" dur="{dur}s" '
+               f'calcMode="linear" repeatCount="indefinite"/></g>')
+    # 扫描线（上下扫动，装饰）
     svg.append(f'<rect x="{padL}" y="{padT}" width="{plotW}" height="2" fill="{P["blue"]}" opacity="0.5">'
                f'<animate attributeName="y" values="{padT};{padT+plotH};{padT}" dur="4.5s" repeatCount="indefinite"/>'
                f'<animate attributeName="opacity" values="0.1;0.7;0.1" dur="4.5s" repeatCount="indefinite"/>'
                f'</rect>')
-    cw = plotW/n*0.6
-    for i in range(n):
-        o,c,h,l = opens[i],closes[i],highs[i],lows[i]
-        col = P["red"] if c>=o else P["green"]
-        cx = x(i)
-        yo=y(o); yc=y(c); top=min(yo,yc); hgt=max(abs(yc-yo),1.5)
-        svg.append(f'<g opacity="0">'
-                   f'<line x1="{cx:.1f}" y1="{y(h):.1f}" x2="{cx:.1f}" y2="{y(l):.1f}" stroke="{col}" stroke-width="1.5"/>'
-                   f'<rect x="{cx-cw/2:.1f}" y="{top:.1f}" width="{cw:.1f}" height="{hgt:.1f}" fill="{col}" rx="1"/>'
-                   f'<animate attributeName="opacity" from="0" to="1" begin="{i*0.07:.2f}s" dur="0.5s" fill="freeze"/>'
-                   f'</g>')
+    # 右侧「当前价」虚线，强化实时感（固定位置，不随滚动）
+    svg.append(f'<line x1="{W-padR}" y1="{padT}" x2="{W-padR}" y2="{padT+plotH}" '
+               f'stroke="{P["pink"]}" stroke-width="1" stroke-dasharray="3 4" opacity="0.6"/>')
     svg.append('</svg>')
     return ''.join(svg)
 
