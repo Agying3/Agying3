@@ -20,8 +20,8 @@
 </p>
 
 <p align="center">
-  <img alt="学习" src="https://img.shields.io/badge/学习中-Rust%20%2B%20Slint-1f7a4d?style=for-the-badge"/>
-  <img alt="状态" src="https://img.shields.io/badge/状态-接活中-3fae8a?style=for-the-badge"/>
+  <img alt="瀛︿範" src="https://img.shields.io/badge/瀛︿範涓?Rust%20%2B%20Slint-1f7a4d?style=for-the-badge"/>
+  <img alt="鐘舵€? src="https://img.shields.io/badge/鐘舵€?鎺ユ椿涓?3fae8a?style=for-the-badge"/>
 </p>
 
 <p align="center">
@@ -53,7 +53,7 @@
 </p>
 
 <p align="center">
-  <sub>👇 点击图片可跳转对应页面</sub>
+  <sub>馃憞 鐐瑰嚮鍥剧墖鍙烦杞搴旈〉闈?/sub>
 </p>
 
 <table>
@@ -100,9 +100,9 @@
 </table>
 
 <p align="center">
-  <a href="https://github.com/Agying3/DMShoot"><img alt="DMShoot" src="https://img.shields.io/badge/DMShoot-私信聚合-1f7a4d?style=for-the-badge&logo=github&logoColor=white"/></a>
-  <a href="https://github.com/Agying3/auto-send"><img alt="auto-send" src="https://img.shields.io/badge/AutoSend-视频上传-3fae8a?style=for-the-badge&logo=github&logoColor=white"/></a>
-  <a href="https://github.com/Agying3?tab=repositories"><img alt="More" src="https://img.shields.io/badge/更多-Repositories-d4a24e?style=for-the-badge&logo=github&logoColor=white"/></a>
+  <a href="https://github.com/Agying3/DMShoot"><img alt="DMShoot" src="https://img.shields.io/badge/DMShoot-绉佷俊鑱氬悎-1f7a4d?style=for-the-badge&logo=github&logoColor=white"/></a>
+  <a href="https://github.com/Agying3/auto-send"><img alt="auto-send" src="https://img.shields.io/badge/AutoSend-瑙嗛涓婁紶-3fae8a?style=for-the-badge&logo=github&logoColor=white"/></a>
+  <a href="https://github.com/Agying3?tab=repositories"><img alt="More" src="https://img.shields.io/badge/鏇村-Repositories-d4a24e?style=for-the-badge&logo=github&logoColor=white"/></a>
 </p>
 
 <table>
@@ -110,18 +110,18 @@
     <td align="center" width="50%">
       <a href="https://github.com/Agying3">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Agying3&show_icons=true&hide_border=true&bg_color=0d1117&title_color=d4a24e&icon_color=2f8f5f&text_color=c9d1d9">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=Agying3&show_icons=true&hide_border=true&bg_color=ffffff&title_color=b8860b&icon_color=2f8f5f&text_color=1f2328">
-          <img src="https://github-readme-stats.vercel.app/api?username=Agying3&show_icons=true&hide_border=true&bg_color=0d1117&title_color=d4a24e&icon_color=2f8f5f&text_color=c9d1d9" alt="stats" width="100%"/>
+          <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api?username=Agying3&show_icons=true&hide_border=true&bg_color=0d1117&title_color=d4a24e&icon_color=2f8f5f&text_color=c9d1d9">
+          <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api?username=Agying3&show_icons=true&hide_border=true&bg_color=ffffff&title_color=b8860b&icon_color=2f8f5f&text_color=1f2328">
+          <img src="https://stats.programcx.cn/api?username=Agying3&show_icons=true&hide_border=true&bg_color=0d1117&title_color=d4a24e&icon_color=2f8f5f&text_color=c9d1d9" alt="stats" width="100%"/>
         </picture>
       </a>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/Agying3?tab=repositories">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.vercel.app/?user=Agying3&hide_border=true&background=0d1117&stroke=2f8f5f&ring=1f7a4d&fire=d4a24e&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=d4a24e&sideLabels=c9d1d9&dates=c9d1d9">
-          <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.vercel.app/?user=Agying3&hide_border=true&background=ffffff&stroke=2f8f5f&ring=1f7a4d&fire=b8860b&currStreakNum=1f2328&sideNums=1f2328&currStreakLabel=b8860b&sideLabels=656d76&dates=656d76">
-          <img src="https://github-readme-streak-stats.vercel.app/?user=Agying3&hide_border=true&background=0d1117&stroke=2f8f5f&ring=1f7a4d&fire=d4a24e&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=d4a24e&sideLabels=c9d1d9&dates=c9d1d9" alt="streak" width="100%"/>
+          <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Agying3&hide_border=true&background=0d1117&stroke=2f8f5f&ring=1f7a4d&fire=d4a24e&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=d4a24e&sideLabels=c9d1d9&dates=c9d1d9">
+          <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=Agying3&hide_border=true&background=ffffff&stroke=2f8f5f&ring=1f7a4d&fire=b8860b&currStreakNum=1f2328&sideNums=1f2328&currStreakLabel=b8860b&sideLabels=656d76&dates=656d76">
+          <img src="https://streak-stats.demolab.com/?user=Agying3&hide_border=true&background=0d1117&stroke=2f8f5f&ring=1f7a4d&fire=d4a24e&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=d4a24e&sideLabels=c9d1d9&dates=c9d1d9" alt="streak" width="100%"/>
         </picture>
       </a>
     </td>
