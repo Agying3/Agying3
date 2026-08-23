@@ -167,11 +167,7 @@
   <tr>
     <td align="center" valign="middle" width="50%" style="border:none;padding:8px;">
       <a href="https://github.com/Agying3">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
-          <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
-          <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="100%"/>
-        </picture>
+        <img src="assets/langs_mosaic.svg" alt="most used languages" width="100%"/>
       </a>
     </td>
     <td align="center" valign="middle" width="50%" style="border:none;padding:8px;">
