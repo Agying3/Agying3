@@ -172,6 +172,7 @@
       <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="320"/>
     </picture>
   </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/Agying3">
     <img src="assets/placeholder_wakatime.svg" alt="wakatime coming soon" width="320"/>
   </a>
@@ -180,6 +181,7 @@
   <a href="https://github.com/Agying3">
     <img src="assets/placeholder_trophy.svg" alt="trophy coming soon" width="320"/>
   </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/Agying3">
     <img src="assets/placeholder_snake.svg" alt="snake coming soon" width="320"/>
   </a>
