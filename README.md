@@ -158,6 +158,26 @@
   </a>
 </p>
 
+<p align="center"><sub>components</sub></p>
+<!-- ===== 动态组件区（自然流式排版，无空格占位格） ===== -->
+<!-- 规划：Top Languages + WakaTime 并排(各50%)；trophy / Snake / typing 各整行居中 -->
+<!-- 当前仅 Top Languages 就绪；后续组件逐个填入，绝不保留任何空 <td> -->
+
+<p align="center">
+  <a href="https://github.com/Agying3">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
+      <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
+      <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="430"/>
+    </picture>
+  </a>
+</p>
+
+<!-- WAKATIME: 与上方 Top Languages 合并为 50% 并排行（待用户提供 share 链接） -->
+<!-- TROPHY: 整行居中 -->
+<!-- SNAKE: 整行居中 -->
+<!-- TYPING: 整行居中 -->
+
 <!-- DRAWING_CARD_BOTTOM:START -->
 <p align="center">
   <img src="assets/my_drawing_widget.svg" alt="NOW SPINNING" width="360"/>
