@@ -159,11 +159,11 @@
 </p>
 
 <p align="center"><sub>components</sub></p>
-<!-- ===== 动态组件区：3×3 科技网格风车 [110][101][010] ===== -->
-<!-- 青绿细线网格（td border），空格子用 decor.svg 科技节点填充，9 格全有内容 -->
-<!-- 行1: Top Languages | WakaTime(占位) | decor -->
-<!-- 行2: trophy(占位) | decor | Snake(占位,等 workflow) -->
-<!-- 行3: decor | typing | decor -->
+<!-- ===== 动态组件区：3×3 风车 [110][101][010]，空格留空 ===== -->
+<!-- 行1: Top Languages | WakaTime(占位) | 空 -->
+<!-- 行2: trophy(占位) | 空 | Snake(占位,等 workflow) -->
+<!-- 行3: 空 | typing | 空 -->
+<!-- 注意：空格不写任何内容（不要填充图案），保持简净 -->
 
 <table>
   <tr>
@@ -181,11 +181,7 @@
         <img src="assets/placeholder_wakatime.svg" alt="wakatime" width="100%"/>
       </a>
     </td>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/decor.svg" alt="decor" width="100%"/>
-      </a>
-    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
   </tr>
   <tr>
     <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
@@ -193,11 +189,7 @@
         <img src="assets/placeholder_trophy.svg" alt="trophy" width="100%"/>
       </a>
     </td>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/decor.svg" alt="decor" width="100%"/>
-      </a>
-    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
     <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
       <a href="https://github.com/Agying3">
         <img src="assets/placeholder_snake.svg" alt="snake" width="100%"/>
@@ -205,21 +197,13 @@
     </td>
   </tr>
   <tr>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/decor.svg" alt="decor" width="100%"/>
-      </a>
-    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
     <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
       <a href="https://github.com/Agying3">
         <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
       </a>
     </td>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/decor.svg" alt="decor" width="100%"/>
-      </a>
-    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
   </tr>
 </table>
 
