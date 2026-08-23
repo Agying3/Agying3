@@ -159,54 +159,56 @@
 </p>
 
 <p align="center"><sub>components</sub></p>
-<!-- ===== 动态组件区：2 列 + 3 整行（横宽图全宽，杜绝拥挤） ===== -->
-<!-- 行1: Top Languages(50%) | WakaTime(50%) -->
-<!-- 行2: trophy 整行（844×174，6 张奖杯一字排开，必须全宽才不挤） -->
-<!-- 行3: Snake 整行（774×158，贡献图横宽，必须全宽） -->
-<!-- 行4: typing 整行（宽幅文字条） -->
-<!-- 无边框、无空格子；每卡 padding:8 留呼吸感 -->
+<!-- ===== 动态组件区：3×3 风车 [110][101][010]，每格 320×320 正方形、无边框 ===== -->
+<!-- 行1: Top Languages | WakaTime(占位,430×430方卡) | 空 -->
+<!-- 行2: trophy(430×430方卡,3×2六奖杯) | 空 | Snake(774×158横宽,格内上下留白) -->
+<!-- 行3: 空 | typing(430×430方卡,终端窗) | 空 -->
+<!-- 规则：每格 width=320 height=320 + valign=middle + td border:none；空格子纯空 -->
+<!-- 注：trophy/typing/WakaTime 已重做成正方形 SVG；TL/Snake 天生横宽，格内上下留白 -->
 
-<table width="720" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;">
+<table width="960" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;">
   <tr>
-    <td align="center" valign="middle" width="50%" style="border:none;padding:8px;">
+    <td align="center" valign="middle" width="320" height="320" style="border:none;padding:6px;">
       <a href="https://github.com/Agying3">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
           <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
-          <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="100%"/>
+          <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="320"/>
         </picture>
       </a>
     </td>
-    <td align="center" valign="middle" width="50%" style="border:none;padding:8px;">
+    <td align="center" valign="middle" width="320" height="320" style="border:none;padding:6px;">
       <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_wakatime.svg" alt="wakatime" width="100%"/>
+        <img src="assets/placeholder_wakatime.svg" alt="wakatime" width="320"/>
       </a>
     </td>
+    <td width="320" height="320" style="border:none;padding:6px;"></td>
   </tr>
   <tr>
-    <td align="center" valign="middle" colspan="2" style="border:none;padding:8px;">
+    <td align="center" valign="middle" width="320" height="320" style="border:none;padding:6px;">
       <a href="https://github.com/Agying3">
-        <img src="assets/trophy.svg" alt="trophy" width="100%"/>
+        <img src="assets/trophy.svg" alt="trophy" width="320"/>
       </a>
     </td>
-  </tr>
-  <tr>
-    <td align="center" valign="middle" colspan="2" style="border:none;padding:8px;">
+    <td width="320" height="320" style="border:none;padding:6px;"></td>
+    <td align="center" valign="middle" width="320" height="320" style="border:none;padding:6px;">
       <a href="https://github.com/Agying3">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake.svg">
           <source media="(prefers-color-scheme: light)" srcset="assets/github-snake-light.svg">
-          <img src="assets/github-snake.svg" alt="snake contribution graph" width="100%"/>
+          <img src="assets/github-snake.svg" alt="snake contribution graph" width="320"/>
         </picture>
       </a>
     </td>
   </tr>
   <tr>
-    <td align="center" valign="middle" colspan="2" style="border:none;padding:8px;">
+    <td width="320" height="320" style="border:none;padding:6px;"></td>
+    <td align="center" valign="middle" width="320" height="320" style="border:none;padding:6px;">
       <a href="https://github.com/Agying3">
-        <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
+        <img src="assets/typing-svg.svg" alt="typing" width="320"/>
       </a>
     </td>
+    <td width="320" height="320" style="border:none;padding:6px;"></td>
   </tr>
 </table>
 

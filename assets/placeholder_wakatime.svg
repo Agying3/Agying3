@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="430" height="170" viewBox="0 0 430 170">
-  <rect width="430" height="170" rx="10" fill="#0d1117"/>
-  <text x="215" y="78" text-anchor="middle" font-family="-apple-system,Segoe UI,sans-serif" font-size="20" font-weight="600" fill="#d4a24e">WakaTime 编码统计</text>
-  <text x="215" y="106" text-anchor="middle" font-family="-apple-system,Segoe UI,sans-serif" font-size="14" fill="#c9d1d9">数据收集中</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="430" viewBox="0 0 430 430">
+  <rect width="430" height="430" rx="14" fill="#0d1117"/>
+  <circle cx="215" cy="168" r="48" fill="none" stroke="#2f8f5f" stroke-width="3"/>
+  <text x="215" y="190" text-anchor="middle" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif" font-size="46">⏱️</text>
+  <text x="215" y="276" text-anchor="middle" font-family="-apple-system, Segoe UI, sans-serif" font-size="22" font-weight="600" fill="#d4a24e">WakaTime 编码统计</text>
+  <text x="215" y="312" text-anchor="middle" font-family="-apple-system, Segoe UI, sans-serif" font-size="15" fill="#c9d1d9">数据收集中…</text>
+  <text x="215" y="362" text-anchor="middle" font-family="-apple-system, Segoe UI, sans-serif" font-size="12" fill="#8b949e">装好 IDE 插件并攒够数据后自动替换</text>
 </svg>
