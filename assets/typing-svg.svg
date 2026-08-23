@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="430" height="170" viewBox="0 0 430 170">
-  <rect width="430" height="170" rx="10" fill="#161b22"/>
-  <text x="24" y="38" font-family="'Courier New',Consolas,monospace" font-size="22" fill="#3fae8a">&gt;</text>
-  <text x="48" y="38" font-family="'Courier New',Consolas,monospace" font-size="22" fill="#d4a24e">Building with Rust + Slint</text>
-  <text x="24" y="74" font-family="'Courier New',Consolas,monospace" font-size="14" fill="#8b949e"># open-source enthusiast // self-taught dev</text>
-  <text x="24" y="106" font-family="'Courier New',Consolas,monospace" font-size="14" fill="#8b949e">$ cd projects/ && make</text>
+  <rect width="430" height="170" rx="10" fill="#0d1117"/>
+  <text x="24" y="38" font-family="monospace" font-size="22" fill="#3fae8a">&gt;</text>
+  <text x="48" y="38" font-family="monospace" font-size="22" fill="#d4a24e">Building with Rust + Slint</text>
+  <text x="24" y="74" font-family="monospace" font-size="14" fill="#c9d1d9"># open-source enthusiast</text>
+  <text x="24" y="106" font-family="monospace" font-size="14" fill="#c9d1d9">$ cd projects/ &amp;&amp; make</text>
   <rect x="282" y="20" width="10" height="22" fill="#d4a24e"/>
 </svg>

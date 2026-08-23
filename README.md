@@ -159,38 +159,69 @@
 </p>
 
 <p align="center"><sub>components</sub></p>
-<!-- ===== 动态组件区（3×3 风车 [110][101][010]，无表格边框无格子感） ===== -->
-<!-- 行1: Top Languages | WakaTime(占位) | 空 -->
-<!-- 行2: trophy(占位) | 空 | Snake(占位,等 workflow) -->
-<!-- 行3: 空 | typing | 空 -->
+<!-- ===== 动态组件区：3×3 科技网格风车 [110][101][010] ===== -->
+<!-- 青绿细线网格（td border），空格子用 decor.svg 科技节点填充，9 格全有内容 -->
+<!-- 行1: Top Languages | WakaTime(占位) | decor -->
+<!-- 行2: trophy(占位) | decor | Snake(占位,等 workflow) -->
+<!-- 行3: decor | typing | decor -->
 
-<p align="center">
-  <a href="https://github.com/Agying3">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
-      <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
-      <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="320"/>
-    </picture>
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/Agying3">
-    <img src="assets/placeholder_wakatime.svg" alt="wakatime coming soon" width="320"/>
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/Agying3">
-    <img src="assets/placeholder_trophy.svg" alt="trophy coming soon" width="320"/>
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/Agying3">
-    <img src="assets/placeholder_snake.svg" alt="snake coming soon" width="320"/>
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/Agying3">
-    <img src="assets/typing-svg.svg" alt="typing" width="320"/>
-  </a>
-</p>
+<table>
+  <tr>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+      <a href="https://github.com/Agying3">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
+          <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
+          <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="100%"/>
+        </picture>
+      </a>
+    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+      <a href="https://github.com/Agying3">
+        <img src="assets/placeholder_wakatime.svg" alt="wakatime" width="100%"/>
+      </a>
+    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+      <a href="https://github.com/Agying3">
+        <img src="assets/decor.svg" alt="decor" width="100%"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+      <a href="https://github.com/Agying3">
+        <img src="assets/placeholder_trophy.svg" alt="trophy" width="100%"/>
+      </a>
+    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+      <a href="https://github.com/Agying3">
+        <img src="assets/decor.svg" alt="decor" width="100%"/>
+      </a>
+    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+      <a href="https://github.com/Agying3">
+        <img src="assets/placeholder_snake.svg" alt="snake" width="100%"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+      <a href="https://github.com/Agying3">
+        <img src="assets/decor.svg" alt="decor" width="100%"/>
+      </a>
+    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+      <a href="https://github.com/Agying3">
+        <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
+      </a>
+    </td>
+    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+      <a href="https://github.com/Agying3">
+        <img src="assets/decor.svg" alt="decor" width="100%"/>
+      </a>
+    </td>
+  </tr>
+</table>
 
 <!-- DRAWING_CARD_BOTTOM:START -->
 <p align="center">

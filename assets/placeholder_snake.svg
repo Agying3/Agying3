@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="430" height="170" viewBox="0 0 430 170">
-  <rect width="430" height="170" rx="10" fill="#161b22"/>
+  <rect width="430" height="170" rx="10" fill="#0d1117"/>
   <text x="215" y="78" text-anchor="middle" font-family="-apple-system,Segoe UI,sans-serif" font-size="20" font-weight="600" fill="#d4a24e">Snake 贡献动画</text>
-  <text x="215" y="106" text-anchor="middle" font-family="-apple-system,Segoe UI,sans-serif" font-size="14" fill="#8b949e">等 GitHub Action 生成</text>
+  <text x="215" y="106" text-anchor="middle" font-family="-apple-system,Segoe UI,sans-serif" font-size="14" fill="#c9d1d9">等 GitHub Action 生成</text>
 </svg>
