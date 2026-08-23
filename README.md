@@ -163,7 +163,7 @@
 <!-- 真组件：Top Languages / typing -->
 <!-- 占位卡：Snake(等 workflow 生成后替换) / trophy / WakaTime(装插件攒数据后替换) -->
 
-<table>
+<table style="border-collapse: separate; border-spacing: 14px;">
   <tr>
     <td align="center" width="50%">
       <a href="https://github.com/Agying3">
