@@ -173,10 +173,28 @@
   </a>
 </p>
 
-<!-- WAKATIME: 与上方 Top Languages 合并为 50% 并排行（待用户提供 share 链接） -->
-<!-- TROPHY: 整行居中 -->
-<!-- SNAKE: 整行居中 -->
-<!-- TYPING: 整行居中 -->
+<!-- WAKATIME: 与上方 Top Languages 合并为 50% 并排行（待用户提供 share 链接，当前无数据已跳过） -->
+<p align="center">
+  <a href="https://github.com/Agying3">
+    <img src="https://github-profile-trophy.vercel.app/?username=Agying3&theme=dracula" alt="trophy"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Agying3">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/github-snake.svg">
+      <img src="assets/github-snake.svg" alt="snake contribution grid" width="100%"/>
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Agying3">
+    <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
+  </a>
+</p>
 
 <!-- DRAWING_CARD_BOTTOM:START -->
 <p align="center">
