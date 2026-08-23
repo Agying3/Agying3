@@ -159,13 +159,14 @@
 </p>
 
 <p align="center"><sub>components</sub></p>
-<!-- ===== 动态组件区（2 列网格：真卡 + 占位卡，结构固定不抖动） ===== -->
-<!-- 真组件：Top Languages / typing -->
-<!-- 占位卡：Snake(等 workflow 生成后替换) / trophy / WakaTime(装插件攒数据后替换) -->
+<!-- ===== 动态组件区（3×3 风车 [110][101][010]，无表格边框无格子感） ===== -->
+<!-- 行1: Top Languages | WakaTime(占位) | 空 -->
+<!-- 行2: trophy(占位) | 空 | Snake(占位,等 workflow) -->
+<!-- 行3: 空 | typing | 空 -->
 
-<table>
+<table border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td align="center" width="42%">
+    <td align="center" width="33%">
       <a href="https://github.com/Agying3">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
@@ -174,8 +175,24 @@
         </picture>
       </a>
     </td>
-    <td width="16%"></td>
-    <td align="center" width="42%">
+    <td align="center" width="33%">
+      <a href="https://github.com/Agying3">
+        <img src="assets/placeholder_wakatime.svg" alt="wakatime coming soon" width="100%"/>
+      </a>
+    </td>
+    <td align="center" width="33%"></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="170"></td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://github.com/Agying3">
+        <img src="assets/placeholder_trophy.svg" alt="trophy coming soon" width="100%"/>
+      </a>
+    </td>
+    <td align="center" width="33%"></td>
+    <td align="center" width="33%">
       <a href="https://github.com/Agying3">
         <img src="assets/placeholder_snake.svg" alt="snake coming soon" width="100%"/>
       </a>
@@ -185,27 +202,13 @@
     <td colspan="3" height="170"></td>
   </tr>
   <tr>
-    <td align="center" width="42%">
+    <td align="center" width="33%"></td>
+    <td align="center" width="33%">
       <a href="https://github.com/Agying3">
         <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
       </a>
     </td>
-    <td width="16%"></td>
-    <td align="center" width="42%">
-      <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_trophy.svg" alt="trophy coming soon" width="100%"/>
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3" height="170"></td>
-  </tr>
-  <tr>
-    <td align="center" colspan="3">
-      <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_wakatime.svg" alt="wakatime coming soon" width="430"/>
-      </a>
-    </td>
+    <td align="center" width="33%"></td>
   </tr>
 </table>
 

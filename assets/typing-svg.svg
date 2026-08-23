@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="60" viewBox="0 0 900 60">
-  <rect width="900" height="60" rx="8" fill="#0d1117"/>
-  <text x="24" y="38" font-family="'Courier New',Consolas,monospace" font-size="26" fill="#3fae8a">&gt;</text>
-  <text x="52" y="38" font-family="'Courier New',Consolas,monospace" font-size="26" fill="#d4a24e">Building with Rust + Slint</text>
-  <rect x="470" y="14" width="14" height="26" fill="#d4a24e"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="170" viewBox="0 0 430 170">
+  <rect x="2" y="2" width="426" height="166" rx="10" fill="#0d1117" stroke="#d4a24e" stroke-width="2"/>
+  <text x="20" y="90" font-family="'Courier New',Consolas,monospace" font-size="22" fill="#3fae8a">&gt;</text>
+  <text x="40" y="90" font-family="'Courier New',Consolas,monospace" font-size="22" fill="#d4a24e">Building with Rust + Slint</text>
+  <rect x="388" y="70" width="12" height="40" fill="#d4a24e"/>
 </svg>

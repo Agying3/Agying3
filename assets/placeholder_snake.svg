@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="430" height="130" viewBox="0 0 430 130">
-  <rect x="2" y="2" width="426" height="126" rx="10" fill="#0d1117" stroke="#d4a24e" stroke-width="2"/>
-  <text x="215" y="64" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="32" fill="#d4a24e">🐍</text>
-  <text x="215" y="94" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="18" fill="#c9d1d9">Snake 生成中</text>
-  <text x="215" y="116" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="13" fill="#8b949e">运行 workflow 后自动替换</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="170" viewBox="0 0 430 170">
+  <rect x="2" y="2" width="426" height="166" rx="10" fill="#0d1117" stroke="#d4a24e" stroke-width="2"/>
+  <text x="215" y="76" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="38" fill="#d4a24e">🐍</text>
+  <text x="215" y="110" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="20" fill="#c9d1d9">Snake 生成中</text>
+  <text x="215" y="136" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="13" fill="#8b949e">运行 workflow 后自动替换</text>
 </svg>
