@@ -159,55 +159,55 @@
 </p>
 
 <p align="center"><sub>components</sub></p>
-<!-- ===== 动态组件区：3×3 风车 [110][101][010]，空格留空 ===== -->
+<!-- ===== 动态组件区：3×3 风车 [110][101][010]，每格独立 240×240 正方形 ===== -->
 <!-- 行1: Top Languages | WakaTime(占位) | 空 -->
-<!-- 行2: trophy(占位) | 空 | Snake(占位,等 workflow) -->
+<!-- 行2: trophy | 空 | Snake -->
 <!-- 行3: 空 | typing | 空 -->
-<!-- 注意：空格不写任何内容（不要填充图案），保持简净 -->
+<!-- 规则：每格 width=240 height=240，无边框无内边距，SVG 居中保留原比例（短内容上下留白） -->
 
-<table>
+<table width="720" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
   <tr>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+    <td align="center" valign="middle" width="240" height="240" style="padding:0;">
       <a href="https://github.com/Agying3">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
           <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
-          <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="100%"/>
+          <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="240"/>
         </picture>
       </a>
     </td>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+    <td align="center" valign="middle" width="240" height="240" style="padding:0;">
       <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_wakatime.svg" alt="wakatime" width="100%"/>
+        <img src="assets/placeholder_wakatime.svg" alt="wakatime" width="240"/>
       </a>
     </td>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
+    <td width="240" height="240" style="padding:0;"></td>
   </tr>
   <tr>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+    <td align="center" valign="middle" width="240" height="240" style="padding:0;">
       <a href="https://github.com/Agying3">
-        <img src="assets/trophy.svg" alt="trophy" width="100%"/>
+        <img src="assets/trophy.svg" alt="trophy" width="240"/>
       </a>
     </td>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+    <td width="240" height="240" style="padding:0;"></td>
+    <td align="center" valign="middle" width="240" height="240" style="padding:0;">
       <a href="https://github.com/Agying3">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake.svg">
           <source media="(prefers-color-scheme: light)" srcset="assets/github-snake-light.svg">
-          <img src="assets/github-snake.svg" alt="snake contribution grid" width="100%"/>
+          <img src="assets/github-snake.svg" alt="snake contribution grid" width="240"/>
         </picture>
       </a>
     </td>
   </tr>
   <tr>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
+    <td width="240" height="240" style="padding:0;"></td>
+    <td align="center" valign="middle" width="240" height="240" style="padding:0;">
       <a href="https://github.com/Agying3">
-        <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
+        <img src="assets/typing-svg.svg" alt="typing" width="240"/>
       </a>
     </td>
-    <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
+    <td width="240" height="240" style="padding:0;"></td>
   </tr>
 </table>
 
