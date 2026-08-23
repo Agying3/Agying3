@@ -192,7 +192,11 @@
     <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
     <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
       <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_snake.svg" alt="snake" width="100%"/>
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake.svg">
+          <source media="(prefers-color-scheme: light)" srcset="assets/github-snake-light.svg">
+          <img src="assets/github-snake.svg" alt="snake contribution grid" width="100%"/>
+        </picture>
       </a>
     </td>
   </tr>
