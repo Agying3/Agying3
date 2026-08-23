@@ -159,10 +159,9 @@
 </p>
 
 <p align="center"><sub>components</sub></p>
-<!-- ===== 动态组件区（紧凑布局：无空格子） ===== -->
-<!-- 布局：Top Languages + Snake 并排(各50%)；typing 整行居中 -->
-<!-- trophy 因 github-profile-trophy.vercel.app 在你网络下加载不出，已暂时移除 -->
-<!-- WakaTime 待你装插件攒数据后加回 -->
+<!-- ===== 动态组件区（2 列网格：真卡 + 占位卡，结构固定不抖动） ===== -->
+<!-- 真组件：Top Languages / typing -->
+<!-- 占位卡：Snake(等 workflow 生成后替换) / trophy / WakaTime(装插件攒数据后替换) -->
 
 <table>
   <tr>
@@ -177,21 +176,30 @@
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/Agying3">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake-dark.svg">
-          <source media="(prefers-color-scheme: light)" srcset="assets/github-snake.svg">
-          <img src="assets/github-snake.svg" alt="snake contribution grid" width="100%"/>
-        </picture>
+        <img src="assets/placeholder_snake.svg" alt="snake coming soon" width="100%"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://github.com/Agying3">
+        <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
+      </a>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://github.com/Agying3">
+        <img src="assets/placeholder_trophy.svg" alt="trophy coming soon" width="100%"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <a href="https://github.com/Agying3">
+        <img src="assets/placeholder_wakatime.svg" alt="wakatime coming soon" width="430"/>
       </a>
     </td>
   </tr>
 </table>
-
-<p align="center">
-  <a href="https://github.com/Agying3">
-    <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
-  </a>
-</p>
 
 <!-- DRAWING_CARD_BOTTOM:START -->
 <p align="center">
