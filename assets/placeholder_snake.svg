@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="430" height="170" viewBox="0 0 430 170">
-  <rect x="2" y="2" width="426" height="166" rx="10" fill="#0d1117" stroke="#d4a24e" stroke-width="2"/>
-  <text x="215" y="76" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="38" fill="#d4a24e">🐍</text>
-  <text x="215" y="110" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="20" fill="#c9d1d9">Snake 生成中</text>
-  <text x="215" y="136" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="13" fill="#8b949e">运行 workflow 后自动替换</text>
+  <rect width="430" height="170" rx="10" fill="#161b22"/>
+  <text x="215" y="78" text-anchor="middle" font-family="-apple-system,Segoe UI,sans-serif" font-size="20" font-weight="600" fill="#d4a24e">Snake 贡献动画</text>
+  <text x="215" y="106" text-anchor="middle" font-family="-apple-system,Segoe UI,sans-serif" font-size="14" fill="#8b949e">等 GitHub Action 生成</text>
 </svg>

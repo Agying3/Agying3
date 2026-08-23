@@ -164,7 +164,7 @@
 <!-- 行2: trophy(占位) | 空 | Snake(占位,等 workflow) -->
 <!-- 行3: 空 | typing | 空 -->
 
-<table border="0" cellpadding="0" cellspacing="0">
+<table border="0" cellpadding="0" cellspacing="0" width="720">
   <tr>
     <td align="center" width="33%" style="border:none;padding:0;">
       <a href="https://github.com/Agying3">
@@ -183,7 +183,7 @@
     <td align="center" width="33%" style="border:none;padding:0;"></td>
   </tr>
   <tr>
-    <td colspan="3" height="20" style="border:none;padding:0;"></td>
+    <td colspan="3" height="8" style="border:none;padding:0;"></td>
   </tr>
   <tr>
     <td align="center" width="33%" style="border:none;padding:0;">
@@ -199,7 +199,7 @@
     </td>
   </tr>
   <tr>
-    <td colspan="3" height="20" style="border:none;padding:0;"></td>
+    <td colspan="3" height="8" style="border:none;padding:0;"></td>
   </tr>
   <tr>
     <td align="center" width="33%" style="border:none;padding:0;"></td>
