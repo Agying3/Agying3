@@ -166,9 +166,9 @@
 <!-- 行4: typing 整行（宽幅文字条） -->
 <!-- 无边框、无空格子；每卡 padding:8 留呼吸感 -->
 
-<table width="720" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+<table width="720" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;">
   <tr>
-    <td align="center" valign="middle" width="50%" style="padding:8px;">
+    <td align="center" valign="middle" width="50%" style="border:none;padding:8px;">
       <a href="https://github.com/Agying3">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
@@ -177,21 +177,21 @@
         </picture>
       </a>
     </td>
-    <td align="center" valign="middle" width="50%" style="padding:8px;">
+    <td align="center" valign="middle" width="50%" style="border:none;padding:8px;">
       <a href="https://github.com/Agying3">
         <img src="assets/placeholder_wakatime.svg" alt="wakatime" width="100%"/>
       </a>
     </td>
   </tr>
   <tr>
-    <td align="center" valign="middle" colspan="2" style="padding:8px;">
+    <td align="center" valign="middle" colspan="2" style="border:none;padding:8px;">
       <a href="https://github.com/Agying3">
         <img src="assets/trophy.svg" alt="trophy" width="100%"/>
       </a>
     </td>
   </tr>
   <tr>
-    <td align="center" valign="middle" colspan="2" style="padding:8px;">
+    <td align="center" valign="middle" colspan="2" style="border:none;padding:8px;">
       <a href="https://github.com/Agying3">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake.svg">
@@ -202,7 +202,7 @@
     </td>
   </tr>
   <tr>
-    <td align="center" valign="middle" colspan="2" style="padding:8px;">
+    <td align="center" valign="middle" colspan="2" style="border:none;padding:8px;">
       <a href="https://github.com/Agying3">
         <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
       </a>
