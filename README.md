@@ -186,7 +186,7 @@
   <tr>
     <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;">
       <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_trophy.svg" alt="trophy" width="100%"/>
+        <img src="assets/trophy.svg" alt="trophy" width="100%"/>
       </a>
     </td>
     <td align="center" width="33%" style="border:1px solid #2f8f5f;padding:8px;"></td>
