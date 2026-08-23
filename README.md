@@ -183,7 +183,7 @@
     <td align="center" width="33%"></td>
   </tr>
   <tr>
-    <td colspan="3" height="170"></td>
+    <td colspan="3" height="20"></td>
   </tr>
   <tr>
     <td align="center" width="33%">
@@ -199,7 +199,7 @@
     </td>
   </tr>
   <tr>
-    <td colspan="3" height="170"></td>
+    <td colspan="3" height="20"></td>
   </tr>
   <tr>
     <td align="center" width="33%"></td>
