@@ -159,36 +159,33 @@
 </p>
 
 <p align="center"><sub>components</sub></p>
-<!-- ===== 动态组件区（自然流式排版，无空格占位格） ===== -->
-<!-- 规划：Top Languages + WakaTime 并排(各50%)；trophy / Snake / typing 各整行居中 -->
-<!-- 当前仅 Top Languages 就绪；后续组件逐个填入，绝不保留任何空 <td> -->
+<!-- ===== 动态组件区（紧凑布局：无空格子） ===== -->
+<!-- 布局：Top Languages + Snake 并排(各50%)；typing 整行居中 -->
+<!-- trophy 因 github-profile-trophy.vercel.app 在你网络下加载不出，已暂时移除 -->
+<!-- WakaTime 待你装插件攒数据后加回 -->
 
-<p align="center">
-  <a href="https://github.com/Agying3">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
-      <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
-      <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="430"/>
-    </picture>
-  </a>
-</p>
-
-<!-- WAKATIME: 与上方 Top Languages 合并为 50% 并排行（待用户提供 share 链接，当前无数据已跳过） -->
-<p align="center">
-  <a href="https://github.com/Agying3">
-    <img src="https://github-profile-trophy.vercel.app/?username=Agying3&theme=dracula" alt="trophy"/>
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Agying3">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="assets/github-snake.svg">
-      <img src="assets/github-snake.svg" alt="snake contribution grid" width="100%"/>
-    </picture>
-  </a>
-</p>
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://github.com/Agying3">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
+          <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
+          <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="100%"/>
+        </picture>
+      </a>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://github.com/Agying3">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake-dark.svg">
+          <source media="(prefers-color-scheme: light)" srcset="assets/github-snake.svg">
+          <img src="assets/github-snake.svg" alt="snake contribution grid" width="100%"/>
+        </picture>
+      </a>
+    </td>
+  </tr>
+</table>
 
 <p align="center">
   <a href="https://github.com/Agying3">
