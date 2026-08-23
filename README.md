@@ -164,53 +164,31 @@
 <!-- 行2: trophy(占位) | 空 | Snake(占位,等 workflow) -->
 <!-- 行3: 空 | typing | 空 -->
 
-<table border="0" cellpadding="0" cellspacing="0" width="720">
-  <tr>
-    <td align="center" width="33%" style="border:none;padding:0;">
-      <a href="https://github.com/Agying3">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
-          <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
-          <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="100%"/>
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%" style="border:none;padding:0;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_wakatime.svg" alt="wakatime coming soon" width="100%"/>
-      </a>
-    </td>
-    <td align="center" width="33%" style="border:none;padding:0;"></td>
-  </tr>
-  <tr>
-    <td colspan="3" height="8" style="border:none;padding:0;"></td>
-  </tr>
-  <tr>
-    <td align="center" width="33%" style="border:none;padding:0;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_trophy.svg" alt="trophy coming soon" width="100%"/>
-      </a>
-    </td>
-    <td align="center" width="33%" style="border:none;padding:0;"></td>
-    <td align="center" width="33%" style="border:none;padding:0;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_snake.svg" alt="snake coming soon" width="100%"/>
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3" height="8" style="border:none;padding:0;"></td>
-  </tr>
-  <tr>
-    <td align="center" width="33%" style="border:none;padding:0;"></td>
-    <td align="center" width="33%" style="border:none;padding:0;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/typing-svg.svg" alt="typing" width="100%"/>
-      </a>
-    </td>
-    <td align="center" width="33%" style="border:none;padding:0;"></td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/Agying3">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f">
+      <source media="(prefers-color-scheme: light)" srcset="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=ffffff&title_color=b8860b&text_color=1f2328&icon_color=2f8f5f">
+      <img src="https://stats.programcx.cn/api/top-langs?username=Agying3&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=d4a24e&text_color=c9d1d9&icon_color=2f8f5f" alt="top languages" width="320"/>
+    </picture>
+  </a>
+  <a href="https://github.com/Agying3">
+    <img src="assets/placeholder_wakatime.svg" alt="wakatime coming soon" width="320"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/Agying3">
+    <img src="assets/placeholder_trophy.svg" alt="trophy coming soon" width="320"/>
+  </a>
+  <a href="https://github.com/Agying3">
+    <img src="assets/placeholder_snake.svg" alt="snake coming soon" width="320"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/Agying3">
+    <img src="assets/typing-svg.svg" alt="typing" width="320"/>
+  </a>
+</p>
 
 <!-- DRAWING_CARD_BOTTOM:START -->
 <p align="center">
