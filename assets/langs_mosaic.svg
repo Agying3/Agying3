@@ -1,20 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
   <defs>
     <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1b212b"/>
-      <stop offset="1" stop-color="#0e121a"/>
+      <stop offset="0" stop-color="#221C16"/>
+      <stop offset="1" stop-color="#110D0A"/>
     </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="2%" r="75%">
+      <stop offset="0" stop-color="#D67E62" stop-opacity="0.12"/>
+      <stop offset="0.55" stop-color="#D67E62" stop-opacity="0.03"/>
+      <stop offset="1" stop-color="#D67E62" stop-opacity="0"/>
+    </radialGradient>
     <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
     </filter>
+    <filter id="tileShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#000000" flood-opacity="0.40"/>
+    </filter>
   </defs>
-  <rect x="0" y="0" width="360" height="360" rx="18" fill="#0d1117"/>
-  <rect x="8" y="8" width="344" height="344" rx="15" fill="url(#panel)" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
-  <line x1="16" y1="9.5" x2="344" y2="9.5" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
-  <rect x="16" y="22" width="4" height="16" rx="2" fill="#d4a24e"/>
-  <text x="28" y="35" font-size="15" font-weight="700" font-family="Arial, -apple-system, Segoe UI, sans-serif" fill="#d4a24e">Most Used Languages</text>
-  <text x="344" y="35" text-anchor="end" font-size="11" font-family="Arial, -apple-system, Segoe UI, sans-serif" fill="#8b949e">13 langs</text>
-  <line x1="16" y1="52" x2="344" y2="52" stroke="#30363d" stroke-width="1"/>
-  <rect x="19.00" y="61.00" width="239.00" height="266.00" rx="6" fill="#3572A5" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/><text x="138.50" y="191.00" text-anchor="middle" font-size="13" font-weight="700" font-family="Arial, -apple-system, Segoe UI, sans-serif" fill="#ffffff">Python</text><text x="138.50" y="209.00" text-anchor="middle" font-size="12" font-family="Arial, -apple-system, Segoe UI, sans-serif" fill="#ffffff">74.7%</text><rect x="264.00" y="61.00" width="77.00" height="105.54" rx="6" fill="#dea584" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/><text x="302.50" y="110.77" text-anchor="middle" font-size="13" font-weight="700" font-family="Arial, -apple-system, Segoe UI, sans-serif" fill="#1f2328">Rust</text><rect x="264.00" y="172.54" width="77.00" height="62.70" rx="6" fill="#b07219" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/><text x="302.50" y="200.89" text-anchor="middle" font-size="13" font-weight="700" font-family="Arial, -apple-system, Segoe UI, sans-serif" fill="#ffffff">Java</text><rect x="264.00" y="241.24" width="52.61" height="45.42" rx="6" fill="#e34c26" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/><text x="290.31" y="260.94" text-anchor="middle" font-size="13" font-weight="700" font-family="Arial, -apple-system, Segoe UI, sans-serif" fill="#ffffff">HTML</text><rect x="322.61" y="241.24" width="18.39" height="45.42" rx="6" fill="#f34b7d" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/><rect x="264.00" y="292.65" width="19.62" height="34.35" rx="6" fill="#3ca5da" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/><rect x="289.63" y="292.65" width="19.02" height="34.35" rx="6" fill="#00ADD8" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/><rect x="314.65" y="292.65" width="26.35" height="22.82" rx="6" fill="#C1F12E" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/><rect x="314.65" y="321.47" width="26.35" height="5.53" rx="6" fill="#6e7681" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
-  <text x="16" y="348" font-size="10" font-family="Arial, -apple-system, Segoe UI, sans-serif" fill="#8b949e">GitHub Linguist · 6 repos · 2 MB</text>
+  <rect x="0" y="0" width="360" height="360" rx="18" fill="#15110D"/>
+  <rect x="8" y="8" width="344" height="344" rx="15" fill="url(#panel)" stroke="#3A2F26" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="9" y="9" width="342" height="342" rx="14" fill="url(#glow)"/>
+  <rect x="10" y="10" width="340" height="340" rx="14" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+  <rect x="16" y="22" width="4" height="16" rx="2" fill="#D67E62"/>
+  <text x="28" y="35" font-size="15" font-weight="700" font-family="Terminus, 'Cascadia Code', Consolas, 'Courier New', monospace" fill="#D67E62">Most Used Languages</text>
+  <text x="344" y="35" text-anchor="end" font-size="11" font-family="Terminus, 'Cascadia Code', Consolas, 'Courier New', monospace" fill="#9E9286">13 langs</text>
+  <line x1="16" y1="52" x2="344" y2="52" stroke="#3A2F26" stroke-width="1"/>
+  <rect x="20.00" y="62.00" width="236.98" height="264.00" rx="7" fill="#3572A5" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" filter="url(#tileShadow)"/><text x="138.49" y="191.00" text-anchor="middle" font-size="13" font-weight="700" font-family="Terminus, 'Cascadia Code', Consolas, 'Courier New', monospace" fill="#ffffff">Python</text><text x="138.49" y="209.00" text-anchor="middle" font-size="12" font-family="Terminus, 'Cascadia Code', Consolas, 'Courier New', monospace" fill="#ffffff">74.7%</text><rect x="264.98" y="62.00" width="75.02" height="103.49" rx="7" fill="#dea584" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" filter="url(#tileShadow)"/><text x="302.49" y="110.75" text-anchor="middle" font-size="13" font-weight="700" font-family="Terminus, 'Cascadia Code', Consolas, 'Courier New', monospace" fill="#1f2328">Rust</text><rect x="264.98" y="173.49" width="75.02" height="60.67" rx="7" fill="#b07219" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" filter="url(#tileShadow)"/><text x="302.49" y="200.83" text-anchor="middle" font-size="13" font-weight="700" font-family="Terminus, 'Cascadia Code', Consolas, 'Courier New', monospace" fill="#ffffff">Java</text><rect x="264.98" y="242.16" width="50.63" height="43.40" rx="7" fill="#e34c26" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" filter="url(#tileShadow)"/><text x="290.29" y="260.86" text-anchor="middle" font-size="13" font-weight="700" font-family="Terminus, 'Cascadia Code', Consolas, 'Courier New', monospace" fill="#ffffff">HTML</text><rect x="323.61" y="242.16" width="16.39" height="43.40" rx="7" fill="#f34b7d" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" filter="url(#tileShadow)"/><rect x="264.98" y="293.56" width="17.56" height="32.44" rx="7" fill="#3ca5da" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" filter="url(#tileShadow)"/><rect x="290.54" y="293.56" width="16.96" height="32.44" rx="7" fill="#00ADD8" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" filter="url(#tileShadow)"/><rect x="315.50" y="293.56" width="24.50" height="20.68" rx="7" fill="#C1F12E" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" filter="url(#tileShadow)"/><rect x="315.50" y="322.24" width="24.50" height="3.76" rx="7" fill="#6e7681" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" filter="url(#tileShadow)"/>
+  <text x="16" y="348" font-size="10" font-family="Terminus, 'Cascadia Code', Consolas, 'Courier New', monospace" fill="#9E9286">GitHub Linguist · 6 repos · 2 MB</text>
 </svg>
