@@ -172,7 +172,7 @@
     </td>
     <td align="center" valign="middle" width="50%" style="border:none;padding:8px;">
       <a href="https://github.com/Agying3">
-        <img src="assets/placeholder_wakatime.svg" alt="wakatime" width="100%"/>
+        <img src="https://wakatime.com/share/@aaa5bd36-d259-4030-ac66-d54ae4152d8e/1bab9fc6-3933-413c-96d4-960872c45c52.svg" alt="wakatime" width="100%"/>
       </a>
     </td>
   </tr>
