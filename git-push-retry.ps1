@@ -28,9 +28,9 @@ param(
 # 国内网络常见修复：强制 HTTP/1.1 长连接 + 放大缓冲，避免 curl 52/55 中途重置
 git config --global http.version HTTP/1.1
 git config --global http.postBuffer 524288000
-
+#common colors: Black、DarkBlue、DarkGreen、DarkCyanDarkRed、DarkMagenta、DarkYellow、Gray、DarkGray、Blue、Green、Cyan、Red、Magenta、Yellow、White
 for ($i = 1; $i -le $MaxTries; $i++) {
-  Write-Host "=== try $i / $MaxTries ===" -ForegroundColor Cyan
+  Write-Host "=== try $i / $MaxTries ===" -ForegroundColor DarkYellow
   git push $Remote $Branch
   if ($LASTEXITCODE -eq 0) {
     Write-Host "PUSH OK" -ForegroundColor Green
@@ -39,5 +39,5 @@ for ($i = 1; $i -le $MaxTries; $i++) {
   Write-Host "retry in ${Delay}s..." -ForegroundColor Yellow
   Start-Sleep -Seconds $Delay
 }
-Write-Host "FAILED after $MaxTries tries" -ForegroundColor Red
+Write-Host "FAILED after $MaxTries tries🥴" -ForegroundColor Red
 exit 1
