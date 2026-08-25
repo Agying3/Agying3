@@ -118,11 +118,7 @@
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/Agying3?tab=repositories">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Agying3&hide_border=true&background=0d1117&stroke=2f8f5f&ring=1f7a4d&fire=d4a24e&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=d4a24e&sideLabels=c9d1d9&dates=c9d1d9">
-          <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=Agying3&hide_border=true&background=ffffff&stroke=2f8f5f&ring=1f7a4d&fire=b8860b&currStreakNum=1f2328&sideNums=1f2328&currStreakLabel=b8860b&sideLabels=656d76&dates=656d76">
-          <img src="https://streak-stats.demolab.com/?user=Agying3&hide_border=true&background=0d1117&stroke=2f8f5f&ring=1f7a4d&fire=d4a24e&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=d4a24e&sideLabels=c9d1d9&dates=c9d1d9" alt="streak" width="100%"/>
-        </picture>
+        <img src="assets/streak.svg" alt="streak" width="100%"/>
       </a>
     </td>
   </tr>
@@ -130,11 +126,7 @@
 
 <p align="center">
   <a href="https://github.com/Agying3">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=Agying3&bg_color=0d1117&hide_border=true&color=2f8f5f&line=d4a24e&point=d4a24e&area=true&area_color=161b22">
-      <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=Agying3&bg_color=ffffff&hide_border=true&color=2f8f5f&line=b8860b&point=b8860b&area=true&area_color=eaeef2">
-      <img src="https://github-readme-activity-graph.vercel.app/graph?username=Agying3&bg_color=0d1117&hide_border=true&color=2f8f5f&line=d4a24e&point=d4a24e&area=true&area_color=161b22" alt="activity" width="1000"/>
-    </picture>
+    <img src="assets/activity_graph.svg" alt="activity graph" width="1000"/>
   </a>
 </p>
 
