@@ -158,26 +158,6 @@
   </a>
 </p>
 
-<p align="center"><sub>components</sub></p>
-<!-- ===== 动态组件区：简化为 2 卡横排（TL + WakaTime） ===== -->
-<!-- 去掉 trophy / Snake / typing 后面三个组件，只保留第一行的两个 -->
-<!-- 无边框 + width=50% + padding:8px（50/50 横排，呼吸感自然） -->
-
-<table width="720" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;">
-  <tr>
-    <td align="center" valign="middle" width="50%" style="border:none;padding:8px;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/langs_mosaic.svg" alt="most used languages" width="100%"/>
-      </a>
-    </td>
-    <td align="center" valign="middle" width="50%" style="border:none;padding:8px;">
-      <a href="https://github.com/Agying3">
-        <img src="assets/wakatime.gif" alt="wakatime" width="100%"/>
-      </a>
-    </td>
-  </tr>
-</table>
-
 <!-- DRAWING_CARD_BOTTOM:START -->
 <p align="center">
   <img src="assets/my_drawing_widget.svg" alt="NOW SPINNING" width="360"/>
