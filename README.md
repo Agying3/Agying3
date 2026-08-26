@@ -27,9 +27,9 @@
 <p align="center">
   <a href="https://github.com/Agying3">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/scene_sakura.svg">
-      <source media="(prefers-color-scheme: light)" srcset="assets/scene_sakura.svg">
-      <img src="assets/scene_sakura.svg" alt="snowy night bicycle" width="1000"/>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/scene_sakura_dark.png">
+      <source media="(prefers-color-scheme: light)" srcset="assets/scene_sakura_light.png">
+      <img src="assets/scene_sakura_dark.png" alt="snowy night bicycle" width="1000"/>
     </picture>
   </a>
 </p>
