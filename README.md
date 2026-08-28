@@ -131,6 +131,10 @@
 </p>
 
 <p align="center">
+  <img src="assets/wakatime_day.svg" alt="wakatime one-day timeline" width="1000"/>
+</p>
+
+<p align="center">
   <a href="https://github.com/Agying3">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/wave_dark.svg">
