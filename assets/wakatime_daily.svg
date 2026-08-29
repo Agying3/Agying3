@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>WakaTime 每日编码时长条形卡片</title>
+<desc>最近 7 天每天编码小时数，今日金色高亮，虚线为日均值</desc>
+<rect x="0.5" y="0.5" width="999" height="299" rx="14" fill="#0d1117" stroke="#21262d"/>
+<text x="40" y="54" font-size="15" letter-spacing="3" fill="#8b949e">CODING TIME · DAILY</text>
+<text x="960" y="54" font-size="22" fill="#d4a24e" text-anchor="end" font-weight="500">59h 04m</text>
+<text x="960" y="76" font-size="13" fill="#8b949e" text-anchor="end">this week</text>
+<line x1="70" y1="240" x2="930" y2="240" stroke="#21262d"/>
+<rect x="103.4" y="193.6" width="56" height="46.4" rx="4" fill="#2f8f5f"/>
+<text x="131.4" y="181.6" font-size="14" fill="#8b949e" text-anchor="middle">4.6h</text>
+<text x="131.4" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Sat</text>
+<rect x="226.3" y="191.6" width="56" height="48.4" rx="4" fill="#2f8f5f"/>
+<text x="254.3" y="179.6" font-size="14" fill="#8b949e" text-anchor="middle">4.8h</text>
+<text x="254.3" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Sun</text>
+<rect x="349.1" y="124.1" width="56" height="115.9" rx="4" fill="#2f8f5f"/>
+<text x="377.1" y="112.1" font-size="14" fill="#8b949e" text-anchor="middle">11.5h</text>
+<text x="377.1" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Mon</text>
+<rect x="472.0" y="146.3" width="56" height="93.7" rx="4" fill="#2f8f5f"/>
+<text x="500.0" y="134.3" font-size="14" fill="#8b949e" text-anchor="middle">9.3h</text>
+<text x="500.0" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Tue</text>
+<rect x="594.9" y="135.2" width="56" height="104.8" rx="4" fill="#2f8f5f"/>
+<text x="622.9" y="123.2" font-size="14" fill="#8b949e" text-anchor="middle">10.4h</text>
+<text x="622.9" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Wed</text>
+<rect x="717.7" y="110.0" width="56" height="130.0" rx="4" fill="#2f8f5f"/>
+<text x="745.7" y="98.0" font-size="14" fill="#c9d1d9" text-anchor="middle">12.9h</text>
+<text x="745.7" y="268" font-size="15" fill="#c9d1d9" text-anchor="middle">Thu</text>
+<rect x="840.6" y="182.6" width="56" height="57.4" rx="4" fill="#d4a24e"/>
+<text x="868.6" y="170.6" font-size="14" fill="#d4a24e" text-anchor="middle">5.7h</text>
+<text x="868.6" y="268" font-size="15" fill="#d4a24e" text-anchor="middle">Fri</text>
+<line x1="70" y1="154.9" x2="930" y2="154.9" stroke="#30363d" stroke-dasharray="5 5"/>
+<text x="926" y="146.9" font-size="13" fill="#8b949e" text-anchor="end">avg 8.4h/day</text>
+<text x="960" y="276" font-size="12" fill="#30363d" text-anchor="end">wakatime</text>
+</svg>
