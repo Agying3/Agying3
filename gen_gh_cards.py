@@ -62,12 +62,19 @@ def parse_contrib(html: str):
 
     real_total = sum(r[2] for r in rows)
     m = re.search(r'<h2[^>]*id="js-contribution-activity-description"[^>]*>\s*'
-                  r'(\d+)\s+contributions?', html)
+                  r'([\d,]+)\s+contributions?', html)
     if m:
         try:
-            real_total = int(m.group(1))
+            real_total = int(m.group(1).replace(",", ""))
         except ValueError:
             pass
+        # GitHub 的 <td> 只给 data-level(0-4) 分档，不给每天真实提交数，
+        # 所以按分档权重把真实总数摊回每一天，保证折线图柱子加总 = 标题上的数字
+        # （不摊的话柱子加起来只有约 117，标题却写 202，一眼就对不上）
+        wsum = sum(r[2] for r in rows)
+        if wsum > 0:
+            k = real_total / wsum
+            rows = [(d, lvl, approx * k) for d, lvl, approx in rows]
     return rows, real_total
 
 
@@ -89,9 +96,13 @@ def compute_streaks(rows):
         else:
             cur = 0
             cur_end = None
+    # 当前连续天数：今天还没提交(lvl=0)不算断签，否则一大早看卡片永远是 "0 天 / since —"
+    seq = list(rows)
+    if seq and seq[-1][0] == date.today() and seq[-1][1] == 0:
+        seq = seq[:-1]
     cs = 0
     cs_end = None
-    for d, lvl, _ in reversed(rows):
+    for d, lvl, _ in reversed(seq):
         if lvl >= 1:
             cs += 1
             cs_end = d

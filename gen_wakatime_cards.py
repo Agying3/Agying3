@@ -12,6 +12,7 @@
 import os
 import json
 import base64
+import time
 import urllib.request
 import datetime
 
@@ -44,10 +45,20 @@ def get_key():
     return None
 
 
-def api(path, key):
+def api(path, key, retries=3):
+    """带重试的 WakaTime 请求。本地代理(127.0.0.1:18081)经常 502，瞬时 SSL 超时可自动恢复。"""
     hdr = {"Authorization": "Basic " + base64.b64encode(key.encode()).decode()}
-    req = urllib.request.Request("https://wakatime.com/api/v1" + path, headers=hdr)
-    return json.load(urllib.request.urlopen(req, timeout=20))
+    url = "https://wakatime.com/api/v1" + path
+    last = None
+    for i in range(retries):
+        try:
+            req = urllib.request.Request(url, headers=hdr)
+            return json.load(urllib.request.urlopen(req, timeout=20))
+        except Exception as e:      # URLError / TimeoutError / HTTPError / JSON 解析失败
+            last = e
+            if i < retries - 1:
+                time.sleep(3 + i * 3)
+    raise last
 
 
 def fmt_hm(seconds):
@@ -250,17 +261,21 @@ def main():
     if len(langs) < 2 or sum(p for _, p, _ in langs) < 50:
         raise SystemExit("language data too thin")
 
-    daily, day_blocks, total = [], None, 0.0
+    daily, total, all_days = [], 0.0, []        # all_days: [(date, durations, secs)] 按时间正序
     for i in range(6, -1, -1):
         d = today - datetime.timedelta(days=i)
         dur = api(f"/users/current/durations?date={d.isoformat()}", key).get("data", [])
         secs = sum(x.get("duration", 0) for x in dur)
         total += secs
         daily.append((d.strftime("%a"), i == 0, round(secs / 3600, 1)))
-        if i == 1:
-            day_blocks = (d, dur)
+        all_days.append((d, dur, secs))
 
-    d, dur = day_blocks
+    # 时间线选哪一天：优先“最近一个编码满 2h 的日子”，全都不满就取最活跃的一天。
+    # 否则遇到昨天/今天几乎没写代码，卡片会只剩一根孤零零的色块，看起来像坏了。
+    MIN_SECS = 2 * 3600
+    substantial = [x for x in all_days if x[2] >= MIN_SECS]
+    d, dur, _ = (substantial[-1] if substantial
+                 else max(all_days, key=lambda x: x[2]))
     blocks = []
     for x in dur:
         st = datetime.datetime.fromtimestamp(x["time"])

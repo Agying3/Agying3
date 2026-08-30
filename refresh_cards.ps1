@@ -1,23 +1,23 @@
-# refresh_cards.ps1
-# 每天自动刷新 GitHub Profile 卡片（streak / activity / wakatime 时间线）。
-# 由 Windows 任务计划调用，放在 Agying3 仓库根目录。
-# 依赖：gen_gh_cards.py、gen_wakatime_cards.py（同目录）以及仓库内 git-push-retry.ps1。
+﻿# refresh_cards.ps1
+# Daily auto-refresh for GitHub Profile cards (streak / activity / wakatime timeline).
+# Run by Windows Task Scheduler from the Agying3 repo root.
+# Depends on: gen_gh_cards.py, gen_wakatime_cards.py (same dir) and git-push-retry.ps1 (repo).
 $ErrorActionPreference = "Stop"
 $Repo = "H:\Agying3"
 $Py   = "C:\Users\Administrator\.workbuddy\binaries\python\versions\3.13.12\python.exe"
 
 Set-Location $Repo
 
-# 0. 删除可能残留的 index.lock，避免 git add/commit 静默失败
+# 0. remove stale index.lock so git add/commit never silently fails
 $lock = Join-Path $Repo ".git/index.lock"
 if (Test-Path $lock) { Remove-Item $lock -Force -ErrorAction SilentlyContinue }
 
-# 1. 重新抓取数据并渲染 SVG（脚本只输出到 assets/）
-& $Py gen_gh_cards.py
-& $Py gen_wakatime_cards.py
-if ($LASTEXITCODE -ne 0) { Write-Warning "generate returned non-zero, still trying to commit" }
+# 1. re-fetch data and render SVG (scripts only output into assets/)
+& $Py gen_gh_cards.py; $g = $LASTEXITCODE
+& $Py gen_wakatime_cards.py; $w = $LASTEXITCODE
+if ($g -ne 0 -or $w -ne 0) { Write-Warning "generator failed (gh=$g waka=$w), skip commit"; exit 0 }
 
-# 2. 暂存：git add -A 加显式关键文件（双保险，避免漏加未跟踪文件）
+# 2. stage: git add -A plus explicit key files (belt and suspenders for untracked files)
 git add -A 2>$null
 git add assets/streak.svg assets/activity_graph.svg assets/wakatime_daily.svg assets/wakatime_langs.svg assets/wakatime_day.svg gen_gh_cards.py gen_wakatime_cards.py refresh_cards.ps1 2>$null
 
