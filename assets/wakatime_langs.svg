@@ -14,14 +14,14 @@
 <path d="M0.0,13.8 L0.0,6.0" stroke="#e34c26" stroke-width="22" fill="none"/>
 <path d="M0.0,6.0 L0.0,2.4" stroke="#98a3b0" stroke-width="22" fill="none"/>
 </g>
-<text x="190" y="206" font-size="30" font-weight="500" fill="#c9d1d9" text-anchor="middle">52h 23m</text>
+<text x="190" y="206" font-size="30" font-weight="500" fill="#c9d1d9" text-anchor="middle">52h 41m</text>
 <text x="190" y="236" font-size="14" fill="#8b949e" text-anchor="middle">this week</text>
 <circle cx="430" cy="144" r="7" fill="#4d8fd6"/>
 <text x="452" y="150" font-size="18" fill="#c9d1d9">Python</text>
-<text x="660" y="150" font-size="15" fill="#8b949e" text-anchor="end">19.2h · 36.7%</text>
+<text x="660" y="150" font-size="15" fill="#8b949e" text-anchor="end">19.3h · 36.7%</text>
 <circle cx="700" cy="144" r="7" fill="#6e7681"/>
 <text x="722" y="150" font-size="18" fill="#c9d1d9">Other</text>
-<text x="930" y="150" font-size="15" fill="#8b949e" text-anchor="end">19.1h · 36.5%</text>
+<text x="930" y="150" font-size="15" fill="#8b949e" text-anchor="end">19.2h · 36.5%</text>
 <circle cx="430" cy="204" r="7" fill="#7d96cc"/>
 <text x="452" y="210" font-size="18" fill="#c9d1d9">Markdown</text>
 <text x="660" y="210" font-size="15" fill="#8b949e" text-anchor="end">10.1h · 19.2%</text>

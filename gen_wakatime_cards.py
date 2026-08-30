@@ -270,12 +270,11 @@ def main():
         daily.append((d.strftime("%a"), i == 0, round(secs / 3600, 1)))
         all_days.append((d, dur, secs))
 
-    # 时间线选哪一天：优先“最近一个编码满 2h 的日子”，全都不满就取最活跃的一天。
-    # 否则遇到昨天/今天几乎没写代码，卡片会只剩一根孤零零的色块，看起来像坏了。
-    MIN_SECS = 2 * 3600
-    substantial = [x for x in all_days if x[2] >= MIN_SECS]
-    d, dur, _ = (substantial[-1] if substantial
-                 else max(all_days, key=lambda x: x[2]))
+    # 时间线选哪一天：取最近一个真有数据的日子（有今天就用今天），
+    # 保证卡片永远显示最新的一天，不会停在几天前看着像没刷新。
+    # 全部为空才退回最活跃的一天。
+    d, dur, _ = next((x for x in reversed(all_days) if x[2] > 0),
+                     max(all_days, key=lambda x: x[2]))
     blocks = []
     for x in dur:
         st = datetime.datetime.fromtimestamp(x["time"])
