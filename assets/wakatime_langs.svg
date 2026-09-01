@@ -6,36 +6,44 @@
 <text x="960" y="54" font-size="13" fill="#8b949e" text-anchor="end" font-weight="500">last 7 days</text>
 <g transform="translate(97,117)">
 <rect x="0" y="0" width="186" height="186" fill="none" stroke="#161b22" stroke-width="22"/>
-<path d="M0.0,0.0 L186.0,0.0 L186.0,123.6" stroke="#4d8fd6" stroke-width="22" fill="none"/>
-<path d="M186.0,123.6 L186.0,186.0 L3.2,186.0" stroke="#6e7681" stroke-width="22" fill="none"/>
-<path d="M3.2,186.0 L0.0,186.0 L0.0,51.3" stroke="#7d96cc" stroke-width="22" fill="none"/>
-<path d="M0.0,51.3 L0.0,26.9" stroke="#3a76c4" stroke-width="22" fill="none"/>
-<path d="M0.0,26.9 L0.0,10.9" stroke="#dea584" stroke-width="22" fill="none"/>
-<path d="M0.0,10.9 L0.0,3.5" stroke="#e34c26" stroke-width="22" fill="none"/>
-<path d="M0.0,3.5 L0.0,0.1" stroke="#98a3b0" stroke-width="22" fill="none"/>
+<path d="M0.0,0.0 L186.0,0.0 L186.0,81.2" stroke="#4d8fd6" stroke-width="22" fill="none"/>
+<path d="M186.0,81.2 L186.0,186.0 L36.9,186.0" stroke="#6e7681" stroke-width="22" fill="none"/>
+<path d="M36.9,186.0 L0.0,186.0 L0.0,72.2" stroke="#7d96cc" stroke-width="22" fill="none"/>
+<path d="M0.0,72.2 L0.0,46.1" stroke="#3fb6d8" stroke-width="22" fill="none"/>
+<path d="M0.0,46.1 L0.0,29.0" stroke="#dea584" stroke-width="22" fill="none"/>
+<path d="M0.0,29.0 L0.0,19.8" stroke="#f1e05a" stroke-width="22" fill="none"/>
+<path d="M0.0,19.8 L0.0,11.6" stroke="#e34c26" stroke-width="22" fill="none"/>
+<path d="M0.0,11.6 L0.0,4.7" stroke="#8b949e" stroke-width="22" fill="none"/>
+<path d="M0.0,4.7 L0.0,1.0" stroke="#98a3b0" stroke-width="22" fill="none"/>
 </g>
-<text x="190" y="206" font-size="30" font-weight="500" fill="#c9d1d9" text-anchor="middle">48h 56m</text>
+<text x="190" y="206" font-size="30" font-weight="500" fill="#c9d1d9" text-anchor="middle">50h 44m</text>
 <text x="190" y="236" font-size="14" fill="#8b949e" text-anchor="middle">this week</text>
 <circle cx="430" cy="144" r="7" fill="#4d8fd6"/>
 <text x="452" y="150" font-size="18" fill="#c9d1d9">Python</text>
-<text x="660" y="150" font-size="15" fill="#8b949e" text-anchor="end">20.4h · 41.6%</text>
+<text x="660" y="150" font-size="15" fill="#8b949e" text-anchor="end">18.2h · 35.9%</text>
 <circle cx="700" cy="144" r="7" fill="#6e7681"/>
 <text x="722" y="150" font-size="18" fill="#c9d1d9">Other</text>
-<text x="930" y="150" font-size="15" fill="#8b949e" text-anchor="end">16.1h · 33.0%</text>
+<text x="930" y="150" font-size="15" fill="#8b949e" text-anchor="end">17.3h · 34.1%</text>
 <circle cx="430" cy="204" r="7" fill="#7d96cc"/>
 <text x="452" y="210" font-size="18" fill="#c9d1d9">Markdown</text>
-<text x="660" y="210" font-size="15" fill="#8b949e" text-anchor="end">9.1h · 18.5%</text>
-<circle cx="700" cy="204" r="7" fill="#3a76c4"/>
-<text x="722" y="210" font-size="18" fill="#c9d1d9">PowerShell</text>
-<text x="930" y="210" font-size="15" fill="#8b949e" text-anchor="end">1.6h · 3.3%</text>
+<text x="660" y="210" font-size="15" fill="#8b949e" text-anchor="end">10.3h · 20.3%</text>
+<circle cx="700" cy="204" r="7" fill="#3fb6d8"/>
+<text x="722" y="210" font-size="18" fill="#c9d1d9">Go</text>
+<text x="930" y="210" font-size="15" fill="#8b949e" text-anchor="end">1.8h · 3.5%</text>
 <circle cx="430" cy="264" r="7" fill="#dea584"/>
 <text x="452" y="270" font-size="18" fill="#c9d1d9">Rust</text>
-<text x="660" y="270" font-size="15" fill="#8b949e" text-anchor="end">1.1h · 2.1%</text>
-<circle cx="700" cy="264" r="7" fill="#e34c26"/>
-<text x="722" y="270" font-size="18" fill="#c9d1d9">HTML</text>
-<text x="930" y="270" font-size="15" fill="#8b949e" text-anchor="end">29m · 1.0%</text>
-<circle cx="430" cy="324" r="7" fill="#98a3b0"/>
-<text x="452" y="330" font-size="18" fill="#c9d1d9">CSV</text>
-<text x="660" y="330" font-size="15" fill="#8b949e" text-anchor="end">13m · 0.5%</text>
+<text x="660" y="270" font-size="15" fill="#8b949e" text-anchor="end">1.2h · 2.3%</text>
+<circle cx="700" cy="264" r="7" fill="#f1e05a"/>
+<text x="722" y="270" font-size="18" fill="#c9d1d9">JavaScript</text>
+<text x="930" y="270" font-size="15" fill="#8b949e" text-anchor="end">37m · 1.2%</text>
+<circle cx="430" cy="324" r="7" fill="#e34c26"/>
+<text x="452" y="330" font-size="18" fill="#c9d1d9">HTML</text>
+<text x="660" y="330" font-size="15" fill="#8b949e" text-anchor="end">33m · 1.1%</text>
+<circle cx="700" cy="324" r="7" fill="#8b949e"/>
+<text x="722" y="330" font-size="18" fill="#c9d1d9">Docker</text>
+<text x="930" y="330" font-size="15" fill="#8b949e" text-anchor="end">28m · 0.9%</text>
+<circle cx="430" cy="384" r="7" fill="#98a3b0"/>
+<text x="452" y="390" font-size="18" fill="#c9d1d9">CSV</text>
+<text x="660" y="390" font-size="15" fill="#8b949e" text-anchor="end">14m · 0.5%</text>
 <text x="960" y="336" font-size="12" fill="#30363d" text-anchor="end">wakatime</text>
 </svg>

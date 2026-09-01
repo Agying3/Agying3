@@ -3,31 +3,31 @@
 <desc>最近 7 天每天编码小时数，今日金色高亮，虚线为日均值</desc>
 <rect x="0.5" y="0.5" width="999" height="299" rx="14" fill="#0d1117" stroke="#21262d"/>
 <text x="40" y="54" font-size="15" letter-spacing="3" fill="#8b949e">CODING TIME · DAILY</text>
-<text x="960" y="54" font-size="22" fill="#d4a24e" text-anchor="end" font-weight="500">48h 56m</text>
+<text x="960" y="54" font-size="22" fill="#d4a24e" text-anchor="end" font-weight="500">50h 44m</text>
 <text x="960" y="76" font-size="13" fill="#8b949e" text-anchor="end">this week</text>
 <line x1="70" y1="240" x2="930" y2="240" stroke="#21262d"/>
-<rect x="103.4" y="146.3" width="56" height="93.7" rx="4" fill="#2f8f5f"/>
-<text x="131.4" y="134.3" font-size="14" fill="#8b949e" text-anchor="middle">9.3h</text>
-<text x="131.4" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Tue</text>
-<rect x="226.3" y="135.2" width="56" height="104.8" rx="4" fill="#2f8f5f"/>
-<text x="254.3" y="123.2" font-size="14" fill="#8b949e" text-anchor="middle">10.4h</text>
-<text x="254.3" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Wed</text>
-<rect x="349.1" y="110.0" width="56" height="130.0" rx="4" fill="#2f8f5f"/>
-<text x="377.1" y="98.0" font-size="14" fill="#c9d1d9" text-anchor="middle">12.9h</text>
-<text x="377.1" y="268" font-size="15" fill="#c9d1d9" text-anchor="middle">Thu</text>
-<rect x="472.0" y="165.4" width="56" height="74.6" rx="4" fill="#2f8f5f"/>
-<text x="500.0" y="153.4" font-size="14" fill="#8b949e" text-anchor="middle">7.4h</text>
-<text x="500.0" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Fri</text>
-<rect x="594.9" y="234.0" width="56" height="6.0" rx="4" fill="#2f8f5f"/>
-<text x="622.9" y="222.0" font-size="14" fill="#8b949e" text-anchor="middle">0.6h</text>
-<text x="622.9" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Sat</text>
-<rect x="717.7" y="166.4" width="56" height="73.6" rx="4" fill="#2f8f5f"/>
-<text x="745.7" y="154.4" font-size="14" fill="#8b949e" text-anchor="middle">7.3h</text>
-<text x="745.7" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Sun</text>
-<rect x="840.6" y="228.9" width="56" height="11.1" rx="4" fill="#d4a24e"/>
-<text x="868.6" y="216.9" font-size="14" fill="#d4a24e" text-anchor="middle">1.1h</text>
-<text x="868.6" y="268" font-size="15" fill="#d4a24e" text-anchor="middle">Mon</text>
-<line x1="70" y1="169.5" x2="930" y2="169.5" stroke="#30363d" stroke-dasharray="5 5"/>
-<text x="926" y="161.5" font-size="13" fill="#8b949e" text-anchor="end">avg 7.0h/day</text>
+<rect x="103.4" y="135.2" width="56" height="104.8" rx="4" fill="#2f8f5f"/>
+<text x="131.4" y="123.2" font-size="14" fill="#8b949e" text-anchor="middle">10.4h</text>
+<text x="131.4" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Wed</text>
+<rect x="226.3" y="110.0" width="56" height="130.0" rx="4" fill="#2f8f5f"/>
+<text x="254.3" y="98.0" font-size="14" fill="#c9d1d9" text-anchor="middle">12.9h</text>
+<text x="254.3" y="268" font-size="15" fill="#c9d1d9" text-anchor="middle">Thu</text>
+<rect x="349.1" y="165.4" width="56" height="74.6" rx="4" fill="#2f8f5f"/>
+<text x="377.1" y="153.4" font-size="14" fill="#8b949e" text-anchor="middle">7.4h</text>
+<text x="377.1" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Fri</text>
+<rect x="472.0" y="234.0" width="56" height="6.0" rx="4" fill="#2f8f5f"/>
+<text x="500.0" y="222.0" font-size="14" fill="#8b949e" text-anchor="middle">0.6h</text>
+<text x="500.0" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Sat</text>
+<rect x="594.9" y="166.4" width="56" height="73.6" rx="4" fill="#2f8f5f"/>
+<text x="622.9" y="154.4" font-size="14" fill="#8b949e" text-anchor="middle">7.3h</text>
+<text x="622.9" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Sun</text>
+<rect x="717.7" y="118.1" width="56" height="121.9" rx="4" fill="#2f8f5f"/>
+<text x="745.7" y="106.1" font-size="14" fill="#8b949e" text-anchor="middle">12.1h</text>
+<text x="745.7" y="268" font-size="15" fill="#8b949e" text-anchor="middle">Mon</text>
+<rect x="840.6" y="237.0" width="56" height="3.0" rx="4" fill="#d4a24e"/>
+<text x="868.6" y="225.0" font-size="14" fill="#d4a24e" text-anchor="middle">0.0h</text>
+<text x="868.6" y="268" font-size="15" fill="#d4a24e" text-anchor="middle">Tue</text>
+<line x1="70" y1="167.0" x2="930" y2="167.0" stroke="#30363d" stroke-dasharray="5 5"/>
+<text x="926" y="159.0" font-size="13" fill="#8b949e" text-anchor="end">avg 7.2h/day</text>
 <text x="960" y="276" font-size="12" fill="#30363d" text-anchor="end">wakatime</text>
 </svg>
