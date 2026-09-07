@@ -159,3 +159,5 @@
   <img src="assets/my_drawing_widget.svg" alt="NOW SPINNING" width="360"/>
 </p>
 <!-- DRAWING_CARD_BOTTOM:END -->
+
+<!-- last hand-maintained: 2026-09-07 -->
