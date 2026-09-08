@@ -45,6 +45,15 @@ if ($current -eq $last) {
 }
 
 # 3. a real push happened -> regenerate and commit
+# 3a. rebase local main onto origin/main so our new commit is fast-forward
+#     (otherwise a local-only commit is behind origin/main -> push rejected)
+git rebase origin/main 2>$null
+if ($LASTEXITCODE -ne 0) {
+    git rebase --abort 2>$null
+    Write-Warning "rebase onto origin/main failed, skip"
+    exit 0
+}
+
 & $Py gen_gh_cards.py; $g = $LASTEXITCODE
 & $Py gen_wakatime_cards.py; $w = $LASTEXITCODE
 if ($g -ne 0 -or $w -ne 0) { Write-Warning "generator failed (gh=$g waka=$w), skip"; exit 0 }
@@ -57,13 +66,22 @@ if ($status) {
     $d = (Get-Date).ToString("yyyy-MM-dd")
     git commit -m "chore: auto refresh cards $d"
     if ($LASTEXITCODE -eq 0) {
-        Set-Content -Path $StateFile -Value $current -NoNewline
         & ".\git-push-retry.ps1"
+        # ONLY advance state after the commit actually landed on origin/main
+        git fetch origin --quiet 2>$null
+        $head   = git rev-parse HEAD
+        $remote = git rev-parse origin/main
+        if ($head -eq $remote) {
+            Set-Content -Path $StateFile -Value $current -NoNewline
+            Write-Host "refreshed + pushed OK, state advanced"
+        } else {
+            Write-Warning "push did not land on origin/main; state NOT advanced, will retry next run"
+        }
     } else {
         Write-Warning "commit failed, skip push"
     }
 } else {
-    # real push detected but cards unchanged -> still advance state
+    # real push detected but cards unchanged -> still advance state (nothing to push)
     Set-Content -Path $StateFile -Value $current -NoNewline
     Write-Host "real push detected but cards unchanged, state advanced"
 }
