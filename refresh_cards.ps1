@@ -6,6 +6,12 @@
 #   2. local-only commits (made but NOT pushed) are ignored, because we compare
 #      against origin/main, not the local log.
 # Run by Windows Task Scheduler from the Agying3 repo root.
+# Manual fallback: run with -Force to refresh + push even when NO new real push
+# was detected (bypasses the gate).  e.g.
+#   powershell -File H:\Agying3\refresh_cards.ps1 -Force
+param(
+    [switch]$Force
+)
 $ErrorActionPreference = "Stop"
 $Repo = "H:\Agying3"
 $Py   = "C:\Users\Administrator\.workbuddy\binaries\python\versions\3.13.12\python.exe"
@@ -32,22 +38,26 @@ if (-not $current) { Write-Host "no commits on remote yet, skip"; exit 0 }
 
 $last = if (Test-Path $StateFile) { (Get-Content $StateFile -Raw).Trim() } else { "" }
 
-if ($last -eq "") {
-    # first run: just record state, do NOT commit (avoid an immediate +1 contribution)
-    Set-Content -Path $StateFile -Value $current -NoNewline
-    Write-Host "first run: state initialized, no commit"
-    exit 0
-}
+if ($Force) {
+    Write-Host "FORCE mode: bypassing the 'new real push' gate, will refresh + push unconditionally"
+} else {
+    if ($last -eq "") {
+        # first run: just record state, do NOT commit (avoid an immediate +1 contribution)
+        Set-Content -Path $StateFile -Value $current -NoNewline
+        Write-Host "first run: state initialized, no commit"
+        exit 0
+    }
 
-if ($current -eq $last) {
-    Write-Host "no new real push on remote since last refresh, skip"
-    exit 0
+    if ($current -eq $last) {
+        Write-Host "no new real push on remote since last refresh, skip (use -Force to override)"
+        exit 0
+    }
 }
 
 # 3. a real push happened -> regenerate and commit
 # 3a. rebase local main onto origin/main so our new commit is fast-forward
 #     (otherwise a local-only commit is behind origin/main -> push rejected)
-git rebase origin/main 2>$null
+git rebase --autostash origin/main 2>$null
 if ($LASTEXITCODE -ne 0) {
     git rebase --abort 2>$null
     Write-Warning "rebase onto origin/main failed, skip"
