@@ -24,13 +24,14 @@ TICKER = sys.argv[1] if len(sys.argv) > 1 else "AGY/USD"
 BARS = int(sys.argv[2]) if len(sys.argv) > 2 else 60
 OUT = os.path.dirname(os.path.abspath(__file__))
 
-SEED = 20260819
+SEED = 20260197                # 由 find_kline_seed.py 按 stylized-facts 打分挑出的种子
 EPOCH = date(2025, 1, 1)
 MAX_DAYS = 600
 P0 = 100.0
 ALPHA, BETA = 0.08, 0.90
 SIGMA2_LONG = 0.0004          # 长期日方差 -> 日波动约 2%
-INTRADAY_STEPS = 24
+INTRADAY_STEPS = 64
+GAP_SIGMA = 0.0025            # 隔夜跳空标准差（约 0.25%）
 
 THEMES = {
     "dark": {
@@ -73,17 +74,14 @@ def gen_series(n_days, seed):
     s2 = SIGMA2_LONG
     price = P0
     out = []
-    drift, regime_left = 0.0, 0
+    mu = 0.0
     for _ in range(n_days):
-        # 趋势段切换：每 25~55 天换一次方向（牛一段 / 熊一段 / 横盘），
-        # 对应真实市场里"趋势与震荡交替"，而不是一条直线走到黑。
-        if regime_left <= 0:
-            regime_left = rng.randint(25, 55)
-            drift = rng.choice([-1.0, -0.4, 0.0, 0.4, 1.0]) * 0.0012
-        regime_left -= 1
-        z = _student_t(rng, 6)
-        r = drift + math.sqrt(s2) * z                      # 当日对数收益
-        o = price
+        # AR(1) 随机漂移：趋势段自然出现（半衰期约 23 天），长期均值为 0，
+        # 不会像固定漂移段那样一路累积成单边直线。
+        mu = 0.97 * mu + rng.gauss(0.0, 0.0008)
+        z = _student_t(rng, 5)
+        r = mu + math.sqrt(s2) * z                          # 当日对数收益
+        o = price * math.exp(_student_t(rng, 6) * GAP_SIGMA)   # 隔夜跳空
         c = o * math.exp(r)
 
         # 日内路径：布朗桥，端点固定为 0 与 log(c/o)
@@ -101,7 +99,8 @@ def gen_series(n_days, seed):
         lo = min(lo, o, c)
 
         # 成交量：与当日波动正相关，对数正态右偏
-        vol = math.exp(0.9 * abs(r) / math.sqrt(SIGMA2_LONG) + rng.gauss(0.0, 0.35)) * 1000.0
+        vol = math.exp(0.7 * min(abs(r) / math.sqrt(SIGMA2_LONG), 3.0)
+                       + rng.gauss(0.0, 0.35)) * 1000.0
         out.append({"o": o, "h": hi, "l": lo, "c": c, "v": vol})
         price = c
         s2 = omega + ALPHA * r * r + BETA * s2
@@ -160,7 +159,8 @@ def render(rows, days, theme_name):
     pad = (hi - lo) * 0.06
     hi, lo = hi + pad, lo - pad
     span = hi - lo
-    vmax = max(r["v"] for r in rows) or 1.0
+    vs = sorted(r["v"] for r in rows)
+    vmax = vs[min(len(vs) - 1, int(len(vs) * 0.95))] or 1.0
 
     def py(p):
         return price_bot - (p - lo) / span * (price_bot - price_top)
@@ -205,7 +205,7 @@ def render(rows, days, theme_name):
         y1, y2 = py(max(r["o"], r["c"])), py(min(r["o"], r["c"]))
         s.append(f'<rect x="{cx-cw/2:.2f}" y="{y1:.2f}" width="{cw:.2f}" '
                  f'height="{max(1.0, y2-y1):.2f}" fill="{fill}" stroke="{col}" stroke-width="1"/>')
-        vh = r["v"] / vmax * (vol_bot - vol_top)
+        vh = min(1.0, r["v"] / vmax) * (vol_bot - vol_top)
         s.append(f'<rect x="{cx-cw/2:.2f}" y="{vol_bot-vh:.2f}" width="{cw:.2f}" '
                  f'height="{vh:.2f}" fill="{col}" opacity="0.35"/>')
 
