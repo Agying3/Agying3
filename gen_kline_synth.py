@@ -26,7 +26,7 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 
 SEED = 20260197                # 由 find_kline_seed.py 按 stylized-facts 打分挑出的种子
 EPOCH = date(2025, 1, 1)
-MAX_DAYS = 600
+MAX_DAYS = 3000               # 必须大于 (今天-EPOCH) 的天数；否则长度被封顶，K 线就永远不动了
 P0 = 100.0
 ALPHA, BETA = 0.08, 0.90
 SIGMA2_LONG = 0.0004          # 长期日方差 -> 日波动约 2%
