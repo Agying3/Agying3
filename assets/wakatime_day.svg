@@ -2,8 +2,8 @@
 <title>WakaTime 一天编码时间线卡片</title>
 <desc>扁卡：上 band 24h 轨道 + 下 band 图例，共享时间栅格</desc>
 <rect x="0.5" y="0.5" width="999" height="117" rx="14" fill="#0d1117" stroke="#21262d"/>
-<text x="40" y="30" font-size="14" letter-spacing="3" fill="#8b949e">ONE DAY · MON SEP 28</text>
-<text x="960" y="30" font-size="16" fill="#d4a24e" text-anchor="end" font-weight="500">6h 32m coded · 100 sessions</text>
+<text x="40" y="30" font-size="14" letter-spacing="3" fill="#8b949e">ONE DAY · WED OCT 07</text>
+<text x="960" y="30" font-size="16" fill="#d4a24e" text-anchor="end" font-weight="500">2h 07m coded · 3 sessions</text>
 <line x1="70.0" y1="40" x2="70.0" y2="84" stroke="#1b222b"/>
 <line x1="285.0" y1="40" x2="285.0" y2="84" stroke="#1b222b"/>
 <line x1="500.0" y1="40" x2="500.0" y2="84" stroke="#1b222b"/>
@@ -19,126 +19,15 @@
 <rect x="70" y="46" width="860" height="20" rx="6" fill="#161b22"/>
 <rect x="70.0" y="46" width="215.0" height="20" fill="#0e131a"/>
 <rect x="715.0" y="46" width="215.0" height="20" fill="#0e131a"/>
-<rect x="388.0" y="46" width="5.4" height="20" rx="2" fill="#6e7681"/>
-<rect x="395.4" y="46" width="30.1" height="20" rx="2" fill="#d4a24e"/>
-<rect x="427.5" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="428.3" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="430.3" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="430.6" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="433.0" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="435.7" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="435.7" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="435.8" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="435.9" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="437.5" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="437.6" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="438.1" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="438.2" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="438.6" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="438.7" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="438.7" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="438.7" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="438.7" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="438.8" y="46" width="6.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="447.3" y="46" width="32.1" height="20" rx="2" fill="#d4a24e"/>
-<rect x="481.4" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="481.9" y="46" width="1.6" height="20" rx="2" fill="#d4a24e"/>
-<rect x="485.4" y="46" width="11.4" height="20" rx="2" fill="#6e7681"/>
-<rect x="498.9" y="46" width="1.5" height="20" rx="2" fill="#4d8fd6"/>
-<rect x="582.4" y="46" width="1.8" height="20" rx="2" fill="#6e7681"/>
-<rect x="586.2" y="46" width="1.9" height="20" rx="2" fill="#6e7681"/>
-<rect x="590.1" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="590.1" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="591.0" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="591.2" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="591.9" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="592.4" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="592.5" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="592.5" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="593.4" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="593.6" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="593.8" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="594.1" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="594.3" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="594.3" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="594.7" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="594.8" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="594.9" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="595.7" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="595.7" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="596.0" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="598.5" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="601.0" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="601.1" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="601.1" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="604.4" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="604.6" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="606.9" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="607.0" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="610.4" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="610.4" y="46" width="18.0" height="20" rx="2" fill="#6e7681"/>
-<rect x="630.4" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="631.0" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="631.1" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="631.5" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="631.5" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="632.3" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="634.2" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="634.4" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="634.7" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="635.0" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="635.1" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="635.3" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="636.5" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="636.5" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="636.7" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="637.4" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="640.0" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="641.7" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="641.7" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="645.0" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="645.1" y="46" width="5.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="652.6" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="652.7" y="46" width="1.7" height="20" rx="2" fill="#6e7681"/>
-<rect x="656.4" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="656.4" y="46" width="2.2" height="20" rx="2" fill="#6e7681"/>
-<rect x="660.7" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="661.6" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="663.2" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="664.8" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="664.8" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="664.8" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="666.0" y="46" width="13.9" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="681.8" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="682.4" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="682.5" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="684.7" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="686.7" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="687.1" y="46" width="1.5" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="689.1" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="691.3" y="46" width="6.0" height="20" rx="2" fill="#9aa4b2"/>
-<rect x="699.3" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
-<rect x="757.4" y="46" width="2.5" height="20" rx="2" fill="#6e7681"/>
+<rect x="423.5" y="46" width="72.4" height="20" rx="2" fill="#6e7681"/>
+<rect x="525.6" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
+<rect x="843.2" y="46" width="1.5" height="20" rx="2" fill="#6e7681"/>
 <text x="70.0" y="82" font-size="11" fill="#8b949e" text-anchor="middle">00:00</text>
 <text x="285.0" y="82" font-size="11" fill="#8b949e" text-anchor="middle">06:00</text>
 <text x="500.0" y="82" font-size="11" fill="#8b949e" text-anchor="middle">12:00</text>
 <text x="715.0" y="82" font-size="11" fill="#8b949e" text-anchor="middle">18:00</text>
 <text x="930.0" y="82" font-size="11" fill="#8b949e" text-anchor="middle">24:00</text>
-<text x="464.3" y="60.0" font-size="11" fill="#0d1117" text-anchor="middle" font-weight="500">57m</text>
+<text x="460.7" y="60.0" font-size="11" fill="#0d1117" text-anchor="middle" font-weight="500">124m</text>
 <circle cx="70" cy="100" r="5" fill="#6e7681"/>
 <text x="82" y="104" font-size="13" fill="#c9d1d9">Unknown Project</text>
-<circle cx="242" cy="100" r="5" fill="#d4a24e"/>
-<text x="254" y="104" font-size="13" fill="#c9d1d9">workkrow</text>
-<circle cx="358" cy="100" r="5" fill="#9aa4b2"/>
-<text x="370" y="104" font-size="13" fill="#c9d1d9">pyPython</text>
-<circle cx="474" cy="100" r="5" fill="#4d8fd6"/>
-<text x="486" y="104" font-size="13" fill="#c9d1d9">API_GUI</text>
-<circle cx="582" cy="100" r="5" fill="#6e7681"/>
-<text x="594" y="104" font-size="13" fill="#c9d1d9">whale</text>
-<circle cx="674" cy="100" r="5" fill="#9aa4b2"/>
-<text x="686" y="104" font-size="13" fill="#c9d1d9">deepseek-harness</text>
-<circle cx="854" cy="100" r="5" fill="#6e7681"/>
-<text x="866" y="104" font-size="13" fill="#c9d1d9">toos</text>
-<circle cx="938" cy="100" r="5" fill="#9aa4b2"/>
-<text x="950" y="104" font-size="13" fill="#c9d1d9">cc</text>
 </svg>
